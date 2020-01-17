@@ -1,0 +1,27 @@
+#signUp-form{
+    width: 50%;
+    margin-top: 50px;
+    display: block
+}
+
+.label-form{
+    font-weight: bold;
+}
+.inputs:focus, .inputs:active{
+    outline:none !important;
+    box-shadow: none !important;
+    border-color:black;
+}
+
+#logo-signUp{
+    float:right;
+    display:block;
+}
+
+#signUp-header{
+    background: white;
+}
+
+/* #signUp-body, .inputs{
+    background:  rgba(135, 16, 16, 0.7)
+} */

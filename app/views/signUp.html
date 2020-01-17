@@ -7,74 +7,82 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/assets/public/css/style.css" />
-    <title>Buzz Buddy</title>
+    <link rel="stylesheet" href="../public/assets/css/signUp.css" />
+    <title>SignUp</title>
     <link rel="shortcut icon" href="/assets/images/logo1.png" />
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container-sm">
 
-        <div class="card">
-            <div class="card-header">
+        <!-- <div class="card mt-5 mb-5" id="signUp-card">
+            <div class="card-header" id="signUp-header">
                 Sign Up
+                <img src="../public/assets/images/logo1.png" id="logo-signUp" alt="logo" style="width:20%;">
+
             </div>
-            <div class="card-body">
+            <div class="card-body" id="signUp-body"> -->
+        <nav class="navbar navbar-light" style="background-color: #ffffff;">
+            <a class="navbar-brand" href="#">
+                <img src="../public/assets/images/logo1.png" alt="logo" style="width: 40%; "></a>
 
-                <form>
 
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="">
-                    </div>
+        </nav>
+        <form id="signUp-form">
 
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlInput3">Password</label>
-                        <input type="text" class="form-control" id="password" placeholder="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlInput4">Password Repeat</label>
-                        <input type="text" class="form-control" id="password-repeat" placeholder="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlInput5">Age</label>
-                        <input type="text" class="form-control" id="age" placeholder="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect6">Gender</label>
-                        <select class="form-control" id="gender">
-                            <option>Female</option>
-                            <option>Male</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleFormControlInput7">Weight (lbs)</label>
-                        <input type="text" class="form-control" id="weight" placeholder="">
-                    </div>
-
-                </form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label-form">Name</label>
+                <input type="text" class="form-control inputs" id="name" placeholder="">
             </div>
-            <div class="card-footer text-muted">
-                <a href="#" class="btn btn-primary" id="signUp-btn">Submit</a>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput2" class="label-form">Email address</label>
+                <input type="email" class="form-control inputs" id="email" placeholder="">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput3" class="label-form">User Name</label>
+                <input type="input" class="form-control inputs" id="userName" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput4" class="label-form">Password</label>
+                <input type="text" class="form-control inputs" id="password" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput5" class="label-form">Password Repeat</label>
+                <input type="text" class="form-control inputs" id="password-repeat" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput6" class="label-form">Age</label>
+                <input type="text" class="form-control inputs" id="age" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect7" class="label-form">Gender</label>
+                <select class="form-control inputs" id="gender">
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput8" class="label-form">Weight (lbs)</label>
+                <input type="text" class="form-control inputs" id="weight" placeholder="">
+            </div>
+
+        </form>
     </div>
 
+    <div class="card-footer text-muted">
+        <a href="#" class="btn btn-primary" id="signUp-btn">Submit</a>
+    </div>
 
-
-
-
+    </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

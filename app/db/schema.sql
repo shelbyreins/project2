@@ -15,3 +15,11 @@ CREATE TABLE user
 	height int NULL,
 	PRIMARY KEY (id)
 );
+
+CREATE TABLE alcohol
+(
+	id int NOT NULL AUTO_INCREMENT,
+	alchoholType varchar(100) NOT NULL,
+	alcoholContent varchar(100) NOT NULL,
+	PRIMARY KEY (id)	
+)
