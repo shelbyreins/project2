@@ -4,31 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/assets/public/css/style.css" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+
+    <link rel="stylesheet" href="../public/assets/css/calendar.css">
+
+
     <title>Buzz Buddy</title>
-    <link rel="shortcut icon" href="/assets/images/logo1.png" />
+    <!-- <link rel="shortcut icon" href="../public/assets/images/logo1.png" /> -->
+
+    <style>
+        html {
+            font: 500 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #demo {
+            width: 400px;
+            margin: 30px auto;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        input {
+            margin: 10px 0;
+            height: 28px;
+            width: 200px;
+            padding: 0 6px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    </style>
+    
 </head>
 
 <body>
+    
+    <div id="one"></div>
+    
 
 
 
-
-
-
-
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="../public/assets/js/calendar.js"></script>
+
+    <script>
+
+var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var date = now.getDate();
+
+
+        var data = [{
+            date: year + '-' + month + '-' + (date - 1),
+            value: 'hello'
+        }, {
+            date: year + '-' + month + '-' + date,
+            value: '上班'
+        }, {
+            date: new Date(year, month - 1, date + 1),
+            value: '吃饭睡觉打豆豆'
+        }, {
+            date: '2016-10-31',
+            value: '2016-10-31'
+        }];
+
+        // inline
+        var $ca = $('#one').calendar({
+            // view: 'month',
+            width: 320,
+            height: 320,
+            // startWeek: 0,
+            // selectedRang: [new Date(), null],
+            data: data,
+            monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            date: new Date(2016, 9, 31),
+            onSelected: function (view, date, data) {
+                console.log('view:' + view)
+                console.log('date:' + date)
+                console.log('data:' + (data || '无'));
+            },
+            viewChange: function (view, y, m) {
+                console.log(view, y, m)
+
+            }
+        });
+
+        // picker
+        $('#two').calendar({
+            trigger: '#dt',
+            // offset: [0, 1],
+            zIndex: 999,
+            data: data,
+            onSelected: function (view, date, data) {
+                console.log('event: onSelected')
+            },
+            onClose: function (view, date, data) {
+                console.log('event: onClose')
+                console.log('view:' + view)
+                console.log('date:' + date)
+                console.log('data:' + (data || '无'));
+            }
+        });
+
+        // Dynamic elements
+        var $demo = $('#demo');
+        var UID = 1;
+        $('#add').click(function () {
+            $demo.append('<input id="input-' + UID + '"><div id="ca-' + UID + '"></div>');
+            $('#ca-' + UID).calendar({
+                trigger: '#input-' + UID++
+            })
+        })
+        $('#container').calendar({
+    
+            data: [
+            
+                {
+            
+                date:'2015/12/24',
+            
+                value:'Christmas Eve'
+            
+                },
+            
+                {
+            
+                date:'2015/12/25',
+            
+                value:'Merry Christmas'
+            
+                },
+            
+                {
+            
+                date:'2016/01/01',
+            
+                value:'Happy New Year'
+            
+                }
+            
+            ]
+            
+            });
+
+    </script>
 
 </body>
 
