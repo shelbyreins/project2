@@ -9,7 +9,7 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
+app.use(express.static("./app/public"));
 
 
 var htmlRoutes = require("./app/routes/html-routes");
