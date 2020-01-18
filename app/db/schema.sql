@@ -20,4 +20,4 @@ CREATE TABLE alcohol
 	alchoholType varchar(100) NOT NULL,
 	alcoholContent varchar(100) NOT NULL,
 	PRIMARY KEY (id)	
-)
+);
