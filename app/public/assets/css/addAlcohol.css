@@ -1,3 +1,15 @@
 .alcohol-img{
-    width: 50px;
+    
+    width: 100px;
 } 
+td{
+    text-align: center;
+}
+
+.alcohol-type{
+    font-weight: bold;
+   
+}
+.table{
+    width:50%;
+}
