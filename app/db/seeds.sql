@@ -19,5 +19,5 @@ VALUES
 ('Tequila, 50%'),
 ('Vodka, 65%'),
 ('Whiskey, 45%'),
-('Wine, 20%'),
+('Wine, 20%');
 
