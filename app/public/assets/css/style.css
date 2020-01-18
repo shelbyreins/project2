@@ -1,5 +1,5 @@
 body{
-    background:url(../images/alcohol-background.jpg);
+    background:url(/assets/images/alcohol-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -32,7 +32,7 @@ body{
     /* border-radius: 10px; */
     margin-top: 80px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 
@@ -66,7 +66,7 @@ body{
 
 .images{
     background: rgb(246, 244, 244);
-    border-radius: 100px;
+    /* border-radius: 100px; */
     height: auto;
     width: 50%;
     margin-right: 20px;
@@ -84,6 +84,15 @@ body{
     margin-inline-end: 0px;
     font-weight: bold;
     text-align: center;
+}
+
+#wrapperTwo{
+background-color:rgba(10, 9, 9, 0.9);
+text-align: center;
+color:white;
+margin-top: 80px;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 
 .modal {

@@ -1,8 +1,14 @@
-#signUp-form{
-    width: 50%;
-    margin-top: 50px;
-    display: block
+.card{
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
+
+#signUp-title{
+    font-size: 1.5em;
+    float: right;
+    margin-top: 35px;
+}
+
 
 .label-form{
     font-weight: bold;
@@ -18,8 +24,16 @@
     display:block;
 }
 
-#signUp-header{
+#signUp-header, #signUp-footer{
     background: white;
+}
+
+#signUp-btn{
+    float: right;
+    width: 12%;
+    font-size: 1em;
+    background: red;
+    border: red;
 }
 
 /* #signUp-body, .inputs{
