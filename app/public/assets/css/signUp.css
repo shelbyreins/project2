@@ -9,10 +9,10 @@
     margin-top: 35px;
 }
 
-
 .label-form{
     font-weight: bold;
 }
+
 .inputs:focus, .inputs:active{
     outline:none !important;
     box-shadow: none !important;
@@ -35,7 +35,3 @@
     background: red;
     border: red;
 }
-
-/* #signUp-body, .inputs{
-    background:  rgba(135, 16, 16, 0.7)
-} */
