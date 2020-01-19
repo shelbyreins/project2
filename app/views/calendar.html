@@ -74,24 +74,20 @@
 
     <script>
 
-var now = new Date();
+        var now = new Date();
         var year = now.getFullYear();
-        var month = now.getMonth() + 1;
+        var month = now.getMonth();
         var date = now.getDate();
+
+        // console.log(now);
+        // console.log("getFullYear(): " + year);
+        // console.log("getMonth(): " + month);
+        // console.log("getDate(): " + date);
 
 
         var data = [{
-            date: year + '-' + month + '-' + (date - 1),
-            value: 'hello'
-        }, {
-            date: year + '-' + month + '-' + date,
-            value: '上班'
-        }, {
-            date: new Date(year, month - 1, date + 1),
-            value: '吃饭睡觉打豆豆'
-        }, {
-            date: '2016-10-31',
-            value: '2016-10-31'
+            date: now,
+            value: "Testing"
         }];
 
         // inline
@@ -103,7 +99,7 @@ var now = new Date();
             // selectedRang: [new Date(), null],
             data: data,
             monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            date: new Date(2016, 9, 31),
+            date: new Date(year, month, date),
             onSelected: function (view, date, data) {
                 console.log('view:' + view)
                 console.log('date:' + date)
