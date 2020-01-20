@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-   
-     <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <title>Buzz Buddy</title>
 
@@ -20,7 +20,7 @@
 <body>
 
     <nav class="navbar navbar-light" style="background-color: #ffffff;">
-        
+
         <a class="navbar-brand" href="#">
             <img src="/assets/images/logo1.png" alt="logo" style="width: 40%; "></a>
         <button type="button" class="btn btn-primary ml-auto" id="login-btn" data-toggle="modal"
@@ -30,8 +30,39 @@
     </nav>
 
     <div id="wrapper">
+        <div class="container">
 
-        <h3 id="card-title" class="mb-4 mt-2"></h3>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/consumption.png" class="images img-fluid rounded-circle"
+                            id="consumption-image" alt="Responsive image">
+                        <div class="caption">Track your <br> alcohol consumption</div>
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/health.png" class="images img-fluid rounded-circle" id="health"
+                            alt="Responsive image">
+                        <div class="caption">Keep yourself within <br> alcohol limits</div>
+
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/money.png" class="images img-fluid rounded-circle" id="money"
+                            alt="Responsive image">
+                        <div class="caption">Drink less,<br> Save money</div>
+
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/accountable.png" class="images img-fluid rounded-circle"
+                            id="accountable" alt="Responsive image">
+                        <div class="caption">Hold yourself <br> accountable</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <h3 id="card-title" class="mb-4 mt-2"></h3>
 
         <div id="home-content">
 
@@ -59,9 +90,9 @@
                 <span class="caption">Hold yourself <br> accountable</span>
             </div>
 
-        </div>
+        </div> -->
 
-    </div>
+    <!-- </div> -->
 
     <div id="wrapperTwo">
 
@@ -94,7 +125,8 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                anyone
                                 else.</small>
                         </div>
                         <div class="form-group">

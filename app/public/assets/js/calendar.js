@@ -17,74 +17,50 @@
 
     var defaults = {
 
-        // 宽度
+
         width: 280,
-        // 高度, 不包含头部，头部固定高度
+
         height: 280,
 
         zIndex: 1,
 
         // selector
-        // 设置触发显示的元素，为null时默认显示
         trigger: null,
 
-        // 偏移位置，可设正负值
-        // trigger 设置时生效
+        // trigger
         offset: [0, 1],
 
-        // 自定义类，用于重写样式
         customClass: '',
 
-        // 显示视图
-        // 可选：date, month
+        // date, month
         view: 'date',
 
-        // 默认日期为当前日期
         date: new Date(),
         format: 'yyyy/mm/dd',
 
-        // 一周的第一天
-        // 0表示周日，依次类推
         startWeek: 0,
 
-        // 星期格式
-        weekArray: ['日', '一', '二', '三', '四', '五', '六'],
+        weekArray: ['S', 'M', 'T', 'W', 'TH', 'F', 'S'],
 
-        // 月份格式
-        monthArray: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 
-        // 设置选择范围
-        // 格式：[开始日期, 结束日期]
-        // 开始日期为空，则无上限；结束日期为空，则无下限
-        // 如设置2015年11月23日以前不可选：[new Date(), null] or ['2015/11/23']
+        //[new Date(), null] or ['2015/11/23']
         selectedRang: null,
 
-        // 日期关联数据 [{ date: string, value: object }, ... ]
-        // 日期格式与 format 一致
-        // 如 [ {date: '2015/11/23', value: '面试'} ]
+        //[ {date: '2015/11/23', value: '面试'} ]
         data: null,
 
-        // 展示关联数据
-        // 格式化参数：{m}视图，{d}日期，{v}value
-        // 设置 false 表示不显示
         label: '{d}\n{v}',
 
-        // 切换字符
         prev: '&lt;',
         next: '&gt;',
 
-        // 切换视图
-        // 参数：view, y, m
         viewChange: $.noop,
 
-        // view: 视图
-        // date: 不同视图返回不同的值
-        // value: 日期关联数据
         onSelected: function (view, date, value) {
             // body...
         },
 
-        // 参数同上
         onMouseenter: $.noop,
 
         onClose: $.noop
@@ -245,7 +221,7 @@
     }
 
     Date.getSiblingsMonth = function (y, m, n) {
-        var d = new Date(y, m - 1);
+        var d = new Date(y, m);
         d.setMonth(m - 1 + n);
         return {
             y: d.getFullYear(),
@@ -456,7 +432,7 @@
         updateDisDate: function (y, m) {
             this.$disDate.html(DATE_DIS_TPL.repeat({
                 year: y,
-                month: m
+                month: defaults.monthArray[m - 1]
             }));
         },
         updateDisMonth: function (y) {
@@ -606,7 +582,7 @@
         getDisDateValue: function () {
             var arr = this.$disDate.html().split('/'),
                 y = Number(arr[0]),
-                m = Number(arr[1].match(/\d{1,2}/)[0]);
+                m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
 
             return [y, m];
         },

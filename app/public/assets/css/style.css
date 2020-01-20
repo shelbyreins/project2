@@ -30,9 +30,9 @@ body{
     text-align: center;
     color:white;
     /* border-radius: 10px; */
-    margin-top: 80px;
+    margin-top: 70px;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 #signUp-btn{
@@ -52,7 +52,7 @@ body{
     margin: auto, 
 
 }
-
+/* 
 .box {
     max-width: 100%;
     display:inline-block;
@@ -60,31 +60,26 @@ body{
     text-align: center;
     width:20%
     
-}
+} */
 
 .images{
     background: rgb(246, 244, 244);
-    /* border-radius: 100px; */
     height: auto;
     width: 50%;
     margin-right: 20px;
 }
 
 .caption{
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     font-weight: bold;
     text-align: center;
+    margin-top: 10px;
 }
 
 #wrapperTwo{
 background-color:rgba(10, 9, 9, 0.9);
 text-align: center;
 color:white;
-margin-top: 80px;
+margin-top: 40px;
 padding-top: 20px;
 padding-bottom: 20px;
 }
@@ -108,3 +103,9 @@ padding-bottom: 20px;
     text-align: left;
     vertical-align: middle;
 }
+
+@media (min-width: 576px) { 
+    #signUp-btn-nav{
+        display: inline-block;
+    }
+ }
