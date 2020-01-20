@@ -104,8 +104,8 @@ padding-bottom: 20px;
     vertical-align: middle;
 }
 
-@media (min-width: 576px) { 
-    #signUp-btn-nav{
-        display: inline-block;
-    }
- }
+@media only screen 
+  and (min-width: 480px) 
+  and (max-width: 576px){
+
+  }

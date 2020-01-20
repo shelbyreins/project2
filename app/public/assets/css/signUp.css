@@ -8,7 +8,9 @@
     float: right;
     margin-top: 35px;
 }
-
+#signUp-logo{
+    width: 15%;
+}
 .label-form{
     font-weight: bold;
 }
@@ -35,3 +37,24 @@
     background: red;
     border: red;
 }
+
+
+ @media only screen 
+  and (min-width: 480px) 
+  and (max-width: 576px){
+    #signUp-logo{
+        width: 40%;
+    }
+    #signUp-title{
+        font-size: 1.5em;
+        display: block;
+        text-align: center;
+    }
+    #signUp-btn{
+        text-align: center;
+        width: 30%;
+        font-size: 1em;
+        background: red;
+        border: red;
+    }
+  }
