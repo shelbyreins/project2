@@ -14,9 +14,9 @@
 }(this, function ($) {
 
     // default config
+    console.log("$ value: " + $);
 
     var defaults = {
-
 
         width: 280,
 
@@ -44,17 +44,22 @@
 
         monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 
-        //[new Date(), null] or ['2015/11/23']
+        // [new Date(), null] or ['2015/11/23']
         selectedRang: null,
 
-        //[ {date: '2015/11/23', value: '面试'} ]
+        // [{ date: string, value: object }, ... ]
+        // format
+        // [ {date: '2015/11/23', value: '面试'} ]
         data: null,
 
+        // {m}，{d}，{v}value
+        // false
         label: '{d}\n{v}',
 
         prev: '&lt;',
         next: '&gt;',
 
+        // view, y, m
         viewChange: $.noop,
 
         onSelected: function (view, date, value) {
@@ -221,7 +226,7 @@
     }
 
     Date.getSiblingsMonth = function (y, m, n) {
-        var d = new Date(y, m);
+        var d = new Date(y, m - 1);
         d.setMonth(m - 1 + n);
         return {
             y: d.getFullYear(),
@@ -583,10 +588,8 @@
             var arr = this.$disDate.html().split('/'),
                 y = Number(arr[0]),
                 m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
-
-                console.log("y: " + y);
                 console.log("m: " + m);
-                
+
             return [y, m];
         },
         selectedDay: function (d, type) {
