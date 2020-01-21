@@ -1,8 +1,17 @@
 .alcohol-img{
     
-    width: 100px;
+    width: 40%;
+
+    
 } 
-td{
+
+.box{
+
+    border: 1px solid black;
+    text-align:center;
+}
+
+/* td{
     text-align: center;
 }
 
@@ -12,4 +21,4 @@ td{
 }
 .table{
     width:50%;
-}
+} */

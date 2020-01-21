@@ -24,9 +24,9 @@
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({
             name: name.val().trim(),
-            username: $("#userName").val().trim(),
+            username: username.val().trim(),
             age: $("#age").val().trim(),
-            password: $("#password").val().trim(),
+            password: password.val().trim(),
             gender: $("#gender").val().trim(),
             weight: $("#weight").val().trim(),
         });
