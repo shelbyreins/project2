@@ -1,3 +1,17 @@
+.alcohol-img{
+    
+    width: 70%;
+
+    
+} 
+
+.box{
+
+    border: 1px solid black;
+    text-align:center;
+}
+
+
 .calendar {
     width: 280px;
     height: 330px;

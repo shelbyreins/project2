@@ -584,6 +584,9 @@
                 y = Number(arr[0]),
                 m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
 
+                console.log("y: " + y);
+                console.log("m: " + m);
+                
             return [y, m];
         },
         selectedDay: function (d, type) {
