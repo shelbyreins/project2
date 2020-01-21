@@ -53,25 +53,33 @@
             outline: none;
         }
     </style>
-    
+
 </head>
 
 <body>
-    
-    <div id="one"></div>
-    
+
+    <div id="one" class="text-center"></div>
+
+    <div class="card" style="width: 18rem;">
+            <a href="#" class="btn btn-primary rounded-0 " id="signUp-btn">Add</a>
+        <div class="card-body">
+            
+        </div>
+    </div>
 
 
 
-<!-- JQuery -->
-<script src="/assets/js/calendar.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- JQuery -->
 
-    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-   
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="/assets/js/calendar.js"></script>
+
+
 
     <script>
 
@@ -139,36 +147,36 @@
             })
         })
         $('#container').calendar({
-    
+
             data: [
-            
+
                 {
-            
-                date:'2015/12/24',
-            
-                value:'Christmas Eve'
-            
+
+                    date: '2015/12/24',
+
+                    value: 'Christmas Eve'
+
                 },
-            
+
                 {
-            
-                date:'2015/12/25',
-            
-                value:'Merry Christmas'
-            
+
+                    date: '2015/12/25',
+
+                    value: 'Merry Christmas'
+
                 },
-            
+
                 {
-            
-                date:'2016/01/01',
-            
-                value:'Happy New Year'
-            
+
+                    date: '2016/01/01',
+
+                    value: 'Happy New Year'
+
                 }
-            
+
             ]
-            
-            });
+
+        });
 
     </script>
 
