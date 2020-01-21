@@ -14,13 +14,16 @@ router.post("/api/signup", function(req, res) {
 });
 
 router.get("/api/signin/:username", function(req, res) {
-  console.log("Checking DB for user....")
-  db.User.findAll({
-    where: {
-      username:req.params.username
+  console.log("Checking DB for user....");
+  console.log(req);
+  console.log(req.params.username);
+  db.User.findOne({
+    where: {username:req.params.username
     }
   }).then(function(results){
-    console.log(res.json(results));
+    console.log("from api route line 24")
+    console.log(results.password);
+    // console.log(res.json(results));
   })
 });
 
