@@ -35,10 +35,12 @@
       // A function for creating a user. Calls getUserss upon completion
       function upsertUser(userData) {
         $.post("/api/signup", userData)
-          .then(data=>console.log(data)).catch(err=>console.log(err));
+          .then(data=>console.log(data)).catch(err=>console.log(err))
+          .then(function() {
+            window.location.href = "/calendar";
+          });
       }
     
-      // Function for retrieving authors and getting them ready to be rendered to the page
       function getUsers() {
         $.get("/api/users", function(data) {
           var rowsToAdd = [];
@@ -47,7 +49,8 @@
           }
           renderUserList(rowsToAdd);
           name.val("");
-        });
+        })
+       
       }
     
       

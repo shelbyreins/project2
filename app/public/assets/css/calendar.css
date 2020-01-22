@@ -1,6 +1,23 @@
+.alcohol-img{
+    
+    width: 40%;
+} 
+/* .alcoholBtn{
+   background-color: #fff !important;
+} */
+.alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus{
+   background-color: red;
+}
+
+.box{
+
+    border: .5px solid black;
+    text-align:center;
+}
+
+
 .calendar {
-    width: 280px;
-    height: 330px;
+    text-align: center;
 }
 
 .calendar-modal {
@@ -87,7 +104,7 @@
 }
 
 .calendar-hd {
-    padding: 10px 0;
+    /* padding: 10px 0; */
     height: 30px;
     line-height: 30px;
 }
@@ -95,6 +112,7 @@
 .calendar-display {
     font-size: 28px;
     text-indent: 10px;
+  
 }
 
 .view-month .calendar-hd {
@@ -119,7 +137,7 @@
 .calendar-views .week,
 .calendar-display:hover,
 .calendar-arrow span:hover {
-    color: #888;
+    color: black;
 }
 
 .calendar-views .days .old,
@@ -151,6 +169,7 @@
     float: left;
     text-align: center;
     border-radius: 50%;
+
 }
 
 .calendar .week li,
@@ -158,6 +177,7 @@
     width: 40px;
     height: 40px;
     line-height: 40px;
+    font-size: 18px;
 }
 
 .calendar .month-items li {
@@ -173,27 +193,29 @@
 
 .calendar .calendar-views .now {
     color: #fff;
-    background: #66be8c!important;
+    background: red!important;
 }
 
 .calendar .calendar-views .selected {
-    color: #66be8c;
-    background: #CDE9D9!important;
+    color: black;
+    background: rgba(255, 0, 0, 0.276)!important;
 }
 
 .calendar .calendar-views .dot {
     position: absolute;
-    left: 50%;
+    left: 46%;
+    margin-top: 2px;
     bottom: 4px;
     margin-left: -2px;
-    width: 4px;
-    height: 4px;
-    background: #66be8c;
+    width: 10px;
+    height: 10px;
+    background: red;
     border-radius: 50%;
 }
 
 .calendar-views .now .dot {
     background: #fff;
+    
 }
 
 .calendar .date-items {

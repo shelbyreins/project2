@@ -38,6 +38,10 @@
     border: red;
 }
 
+.required{
+    color:red;
+}
+
 
  @media only screen 
   and (min-width: 480px) 
@@ -51,6 +55,7 @@
         text-align: center;
     }
     #signUp-btn{
+       position: relative;
         text-align: center;
         width: 30%;
         font-size: 1em;
