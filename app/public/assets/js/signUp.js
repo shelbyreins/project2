@@ -16,7 +16,7 @@
         event.preventDefault();
         console.log('registering user...')
         // Don't do anything if the name fields hasn't been filled out
-        if (!username.val().trim()|| !password.val().trim()) {
+        if (!username.val().trim()|| !password.val().trim()||!age.val().trim()) {
             console.log("Input not correct");
             alert("All required inputs are not entered")
           return;
@@ -38,12 +38,20 @@
       // A function for creating a user. Calls getUserss upon completion
       function upsertUser(userData) {
         $.post("/api/signup", userData)
-          .then(data=>console.log(data)).catch(err=>console.log(err))
+          .then(data=>console.log(data))
+
+          
+          .catch(err=>console.log(err))
           // .then(function() {
-          //   window.location.href = "/calendar";
+          //   
           // });
+          redirect();
       }
     
+      function redirect(){
+        window.location.href = "/calendar";
+      }
+
       function getUsers() {
         $.get("/api/signup", function(data) {
           var rowsToAdd = [];

@@ -25,18 +25,43 @@
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({
             username: $("#login-email").val().trim(),
-            
-            //password: $("#login-password").val().trim(),
+            password: $("#login-password").val().trim(),
         });
         
       }
       
-      // A function for creating a user. Calls getUserss upon completion
+
+      //A function for creating a user. Calls getUserss upon completion
       function upsertUser(userData) {
         console.log($("#login-email").val().trim());
-        $.get("/api/signin/"+$("#login-email").val().trim())
-          .then(data=>console.log(data)).catch(err=>console.log(err));
+        var login_name = $("#login-email").val().trim();
+        var login_password = $("#login-password").val().trim();
+        $.post("/api/signin", userData)
+        
+          .then(data=>console.log(data))
+          .catch(err=>console.log(err));
+          var username_db = data.username;//this part is not working.
+          var password_db = data.password;//this part is not working.
+        
+        if(username_db===login_db&& login_password===password_db){
+          redirect();
+        }else{
+          alert("Your username or password is incorrect");
+        }
+        
       }
+
+      function redirect(){
+        window.location.href = "/calendar";
+      }
+
+      // function upsertUser(userData) {
+      //   $.post("/api/signin", userData)
+      //     .then(data=>console.log(data)).catch(err=>console.log(err))
+      //     // .then(function() {
+      //     //   window.location.href = "/calendar";
+      //     // });
+      // }
     
       // Function for retrieving authors and getting them ready to be rendered to the page
       function getUsers() {
