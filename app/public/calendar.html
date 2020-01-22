@@ -61,10 +61,13 @@
 
 <body>
 
-    <div class ="mt-5 mx-auto" id="one">
+    <nav class="navbar navbar-light" style="background-color: #ffffff;">
+        <img src="/assets/images/logo1.png" alt="logo" style="width: 40%; ">
+        <button type="button" class="btn btn-primary ml-auto" id="logoutBtn">Logout</button>
+    </nav>
 
+    <div class="mt-5 mx-auto" id="one">
     </div>
-
 
     <div class="card mt-5" style="width: 18rem;">
 
@@ -75,22 +78,21 @@
                     Add
                 </button>
             </div>
-
         </div>
-
-
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <h5 class="modal-title">Add Your Drink(s)</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <div class="container-fluid">
 
@@ -101,31 +103,27 @@
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/beer.png" alt=""></button>
 
                                 <div class="alcohol-type mb-3">Beer</div>
-
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="bloodyMary" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/bloodyMary.png"
                                         alt=""></button>
                                 <div class="alcohol-type mb-3">Bloody Mary</div>
-
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="bourbon" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/bourbon.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Bourbon</div>
-
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="champagne" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/champagne.png"
                                         alt=""></button>
                                 <div class="alcohol-type mb-3">Champagne</div>
-
                             </div>
 
-
                         </div>
+
                         <div class="row  justify-content-center">
 
                             <div class="col-sm-3 p-0 box">
@@ -133,7 +131,6 @@
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/cider.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Cider</div>
                             </div>
-
                             <div class="col-sm-3 p-0  box">
                                 <button name="subject" type="submit" value="cocktail" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/cocktail.png" alt=""></button>
@@ -150,10 +147,10 @@
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/margarita.png"
                                         alt=""></button>
                                 <div class="alcohol-type mb-3">Margarita</div>
-
                             </div>
 
                         </div>
+
                         <div class="row  justify-content-center">
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="martini" class="alcoholBtn"><img
@@ -165,51 +162,41 @@
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/mojito.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Mojito</div>
                             </div>
-
-
                             <div class="col-sm-3 p-0  box">
                                 <button name="subject" type="submit" value="moscowMule" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/moscowMule.png"
                                         alt=""></button>
                                 <div class="alcohol-type mb-3">Moscow Mule</div>
-
                             </div>
-
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="pilsner" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/pilsner.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Pilsner</div>
-
                             </div>
 
-
                         </div>
+
                         <div class="row  justify-content-center">
 
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="rum" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/rum.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Rum</div>
-
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="sake" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/sake.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Sake</div>
-
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="sangria" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/sangria.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Sangria</div>
-
                             </div>
-
                             <div class="col-sm-3 p-0  box">
                                 <button name="subject" type="submit" value="shot" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/shot.png" alt=""></button>
                                 <div class="alcohol-type mb-3">Shot</div>
-
                             </div>
 
                         </div>
@@ -251,10 +238,19 @@
                             aria-describedby="inputGroup-sizing-sm">
                     </div>
 
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
 
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save
+                        changes</button>
                 </div>
             </div>
         </div>
@@ -264,8 +260,6 @@
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -323,8 +317,6 @@
             }
         });
 
-
-
         // picker
         $('#two').calendar({
             trigger: '#dt',
@@ -362,26 +354,26 @@
 
             data.push({ date: datePicked, value: alcohol });
 
-//             $('#one').calendar({
-                
-//                 data: [
+            //             $('#one').calendar({
 
-//                     {
+            //                 data: [
 
-//                         date: datePicked,
+            //                     {
 
-//                         value: alcohol
+            //                         date: datePicked,
 
-//                     }
-//                 ]
+            //                         value: alcohol
 
-// });
+            //                     }
+            //                 ]
 
-        $("#one").calendar(, alcohol);
+            // });
+
+            // $("#one").calendar(alcohol);
             // console.log("date added...");
         });
 
-        $(".alcoholBtn").on("click", function(event) {
+        $(".alcoholBtn").on("click", function (event) {
             event.preventDefault();
 
             alcohol = $(this).val();
@@ -390,9 +382,6 @@
         });
 
     </script>
-
-
-
 
 
 </body>
