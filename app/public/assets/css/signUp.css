@@ -1,5 +1,13 @@
+body{
+    background:url(/assets/images/alcohol-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+} 
+
 .card{
-    margin-top: 70px;
+    margin-top: 90px;
     margin-bottom: 70px;
 }
 
@@ -8,17 +16,34 @@
     float: right;
     margin-top: 35px;
 }
-
-
+#signUp-logo{
+    width: 15%;
+}
 .label-form{
     font-weight: bold;
 }
+.inputs{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
 .inputs:focus, .inputs:active{
-    outline:none !important;
+    /* outline:none !important;
     box-shadow: none !important;
-    border-color:black;
+    border-color:black; */
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
 }
 
+select:not([multiple]) {
+    -webkit-appearance: none;
+    
+}
 #logo-signUp{
     float:right;
     display:block;
@@ -36,6 +61,39 @@
     border: red;
 }
 
-/* #signUp-body, .inputs{
-    background:  rgba(135, 16, 16, 0.7)
-} */
+#signUp-btn:focus {
+    outline:none !important;
+    box-shadow: none !important;
+    border:rgba(255, 0, 0);
+}
+
+#signUp-btn:hover{
+    background: rgba(255, 0, 0, 0.454);
+}
+
+.required{
+    color:red;
+}
+
+
+ @media only screen 
+  and (min-width: 300px) 
+  and (min-width: 480px) 
+  and (max-width: 576px){
+    #signUp-logo{
+        width: 40%;
+    }
+    #signUp-title{
+        font-size: 1.5em;
+        display: block;
+        text-align: center;
+    }
+    #signUp-btn{
+       position: relative;
+        text-align: center;
+        width: 30%;
+        font-size: 1em;
+        background: red;
+        border: red;
+    }
+  }

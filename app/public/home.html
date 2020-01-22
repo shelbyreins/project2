@@ -6,95 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="" href="/assets/images/logo1.png" />
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="/assets/css/style.css" />
 
     <title>Buzz Buddy</title>
+
+    <link rel="shortcut icon" href="/assets/images/logo1.png" />
+
 </head>
 
 <body>
 
     <nav class="navbar navbar-light" style="background-color: #ffffff;">
+
         <a class="navbar-brand" href="#">
             <img src="/assets/images/logo1.png" alt="logo" style="width: 40%; "></a>
-
-        <!-- <h1 class="display-4 text-center" id="home-title">Buzz Buddy</h1> -->
         <button type="button" class="btn btn-primary ml-auto" id="login-btn" data-toggle="modal"
             data-target="#exampleModal">Sign in</button>
-
-        <a class="btn btn-primary " href="sign-up" id="signUp-btn-nav" role="button">Sign up</a>
+        <a class="btn btn-primary " href="/sign-up" id="signUp-btn-nav" role="button">Sign up</a>
 
     </nav>
-    <!-- <div class="container">
-        <div class="card mt-5">
-            <div class="card-header text-center" id="card-title">
-                About the App/Instructions:
-            </div>
-            <div class="card-body" id="card-body">
-                <h6 class="card-title">Create an account and track your alcohol consumption </h6>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, minus omnis! Cumque accusantium dolorum qui! Eveniet dignissimos sed, esse deserunt pariatur quod omnis nihil vero. Velit rem reiciendis libero possimus.</p>
-                <a href="../views/signUp.html" class="btn btn-primary">Sign up</a>
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="container"> -->
 
     <div id="wrapper">
-        <h3 id="card-title" class="mb-4 mt-2"></h3>
-        <div id="home-content">
-            <div class="box img-fluid">
-                <img src="/assets/images/consumption.png" class="images img-fluid rounded-circle" id="consumption-image"
-                    alt="Responsive image">
-                <span class="caption">Track your <br> alcohol consumption</span>
-            </div>
-            <div class="box img-fluid">
-                <img src="/assets/images/health.png" class="images img-fluid rounded-circle" id="health"
-                    alt="Responsive image">
-                <span class="caption">Keep yourself within <br> alcohol limits</span>
-            </div>
-            <div class="box img-fluid">
-                <img src="/assets/images/money.png" class="images img-fluid rounded-circle" id="money"
-                    alt="Responsive image">
-                <span class="caption">Drink less,<br> Save money</span>
-            </div>
-            <div class="box img-fluid">
-                <img src="/assets/images/accountable.png" class="images img-fluid rounded-circle" id="accountable"
-                    alt="Responsive image">
-                <span class="caption">Hold yourself <br> accountable</span>
+        <div class="container">
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/consumption.png" class="images img-fluid rounded-circle"
+                            id="consumption-image" alt="Responsive image">
+                        <div class="caption">Track your <br> alcohol consumption</div>
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/health.png" class="images img-fluid rounded-circle" id="health"
+                            alt="Responsive image">
+                        <div class="caption">Keep yourself within <br> alcohol limits</div>
+
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/money.png" class="images img-fluid rounded-circle" id="money"
+                            alt="Responsive image">
+                        <div class="caption">Drink less,<br> Save money</div>
+
+                    </div>
+                    <div class="col-sm-3 mt-3">
+                        <img src="/assets/images/accountable.png" class="images img-fluid rounded-circle"
+                            id="accountable" alt="Responsive image">
+                        <div class="caption">Hold yourself <br> accountable</div>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <br>
-
-        <!-- <a href="../views/signUp.html" class="btn btn-primary" id="signUp-btn">Sign up</a> -->
-
     </div>
+
     <div id="wrapperTwo">
-        <h2>Why Buzz Buddy?</h2>
-        <h2>How it works?</h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Why Buzz Buddy?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure perspiciatis cum enim quos! Laboriosam
+                    iure tenetur quam unde. Itaque eos ut laudantium quod veniam dolore ducimus aliquid repellendus
+                    dicta tenetur.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>How it works?</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis ipsam ab quaerat sunt neque atque
+                    quasi at ipsum repellendus delectus iste provident ratione, sit suscipit, aspernatur omnis commodi
+                    placeat asperiores.</p>
+            </div>
+        </div>
+
     </div>
-    <!-- </div> -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
                 <div class="modal-body">
-                    <!-- Enter form here -->
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1">Username</label>
                             <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                                else.</small>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
@@ -102,22 +105,21 @@
                         </div>
                     </form>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="login-btn">Submit</button>
                 </div>
-                <!-- <button type="button" class="btn btn-primary">Sign Up</button> -->
 
             </div>
         </div>
     </div>
 
-
-
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>

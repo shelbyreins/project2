@@ -6,7 +6,7 @@ body{
     background-attachment: fixed;
 } 
 
- #login-btn, #signUp-btn-nav{
+ #login-btn, #signUp-btn-nav, #submit-btn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
     font-weight: bold;
@@ -21,6 +21,25 @@ body{
      margin-right:10px;
  }
 
+ #login-btn:hover, #signUp-btn-nav:hover, #submit-btn:hover{
+    background: rgba(255, 0, 0, 0.454);
+}
+#login-btn:focus, #signUp-btn-nav:focus, #submit-btn:focus{
+    outline:none !important;
+    box-shadow: none !important;
+    border:rgba(255, 0, 0);
+}
+
+
+
+#login-email:focus, #login-password:focus, #login-email:active, #login-password:active{
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
+}
  #card-title{
      font-size: 3em;
  }
@@ -30,67 +49,36 @@ body{
     text-align: center;
     color:white;
     /* border-radius: 10px; */
-    margin-top: 80px;
+    margin-top: 70px;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 
-
-#signUp-btn{
-    margin-top: 20px;
-    background: rgb(251, 251, 251);
-    border:rgb(253, 251, 251);
-    font-weight: bold;
-    color: rgb(171, 10, 10);
-    border-radius: 0px;
-    padding-left: 20px;
-    padding-right:20px;
-    padding-top:5px;
-    padding-bottom:5px;
-}
 
 #home-content{
     margin: auto, 
 
 }
 
-.box {
-    max-width: 100%;
-    display:inline-block;
-    font-size: 110%;
-    text-align: center;
-    width:20%
-    
-}
-
 .images{
     background: rgb(246, 244, 244);
-    /* border-radius: 100px; */
     height: auto;
     width: 50%;
     margin-right: 20px;
 }
 
 .caption{
-    /* display: inline-block;
-    padding: 0 5% 0 5%;
-    text-align:center;
-    font-weight: bold; */
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     font-weight: bold;
     text-align: center;
+    margin-top: 10px;
 }
 
 #wrapperTwo{
 background-color:rgba(10, 9, 9, 0.9);
 text-align: center;
 color:white;
-margin-top: 80px;
+margin-top: 40px;
 padding-top: 20px;
 padding-bottom: 20px;
 }
@@ -99,16 +87,24 @@ padding-bottom: 20px;
     text-align: center;
     padding: 0!important;
     width:100%;
-  }
+}
+
   .modal:before {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     margin-right: -4px;
-  }
+}
+
   .modal-dialog {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
-  }
+}
+
+/* @media only screen 
+  and (min-width: 480px) 
+  and (max-width: 576px){
+
+  } */
