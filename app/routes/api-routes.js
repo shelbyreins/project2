@@ -13,7 +13,7 @@ router.post("/api/signup", function(req, res) {
   db.User.create(req.body).then(data=>res.send(data))
 });
 
-router.put("/api/log/:id", function(req, res) {
+router.put("/api/calendar/:id", function(req, res) {
 
 });
 
