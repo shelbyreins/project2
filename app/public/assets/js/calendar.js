@@ -14,7 +14,6 @@
 }(this, function ($) {
 
     // default config
-    console.log("$ value: " + $);
 
     var defaults = {
 

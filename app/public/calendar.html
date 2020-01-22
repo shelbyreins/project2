@@ -343,14 +343,14 @@
         });
 
         // Dynamic elements
-        var $demo = $('#demo');
-        var UID = 1;
-        $('#add').click(function () {
-            $demo.append('<input id="input-' + UID + '"><div id="ca-' + UID + '"></div>');
-            $('#ca-' + UID).calendar({
-                trigger: '#input-' + UID++
-            })
-        })
+        // var $demo = $('#demo');
+        // var UID = 1;
+        // $('#add').click(function () {
+        //     $demo.append('<input id="input-' + UID + '"><div id="ca-' + UID + '"></div>');
+        //     $('#ca-' + UID).calendar({
+        //         trigger: '#input-' + UID++
+        //     })
+        // })
 
         var alcohol;
 
@@ -360,24 +360,20 @@
             console.log("Modal button working...");
             console.log("datePicked: " + datePicked);
 
-            data.push({ date: datePicked, value: alcohol });
+            data.push({ date: new Date(datePicked), value: alcohol });
+            
+            console.log(data[1].date);
 
-//             $('#one').calendar({
-                
-//                 data: [
 
-//                     {
+            // $("#one").calendar(Date.prototype.setDate.bind(new Date(datePicked)), alcohol);
+            $("#one").calendar({
+                // date: data[1].date,
+                data: data
 
-//                         date: datePicked,
+            });
 
-//                         value: alcohol
-
-//                     }
-//                 ]
-
-// });
-
-        $("#one").calendar(, alcohol);
+            // console.log("data: " + data);
+            
             // console.log("date added...");
         });
 
