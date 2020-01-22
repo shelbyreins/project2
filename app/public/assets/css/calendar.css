@@ -1,3 +1,31 @@
+body{
+    background:url(/assets/images/alcohol-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+} 
+
+#logoutBtn{
+    background: rgba(255, 0, 0);
+    border:rgba(255, 0, 0);
+    font-weight: bold;
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#logoutBtn:hover{
+    background: rgba(255, 0, 0, 0.454);
+}
+#logoutBtn:focus{
+    outline:none !important;
+    box-shadow: none !important;
+    border:rgba(255, 0, 0);
+}
+
 .alcohol-img{
     
     width: 40%;
@@ -249,3 +277,16 @@
     border: 6px solid transparent;
     border-top-color: #000;
 }
+
+
+/* @media only screen 
+  and (min-width: 320px) 
+  and (max-width: 480px){
+
+    body{
+        width: 100%;
+    }
+    .calendar{
+        width: 100%;
+    }
+  } */
