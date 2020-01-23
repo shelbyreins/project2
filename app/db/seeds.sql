@@ -1,3 +1,4 @@
+
 INSERT INTO alcohol (alcoholType, alcoholContent) 
 VALUES 
 ('Beer', '6%'),
@@ -20,4 +21,5 @@ VALUES
 ('Vodka', '65%'),
 ('Whiskey', '45%'),
 ('Wine', '20%');
+
 
