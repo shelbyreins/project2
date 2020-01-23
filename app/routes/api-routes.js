@@ -11,8 +11,12 @@ router.get("/api/log", function(req, res) {
 //to insert a new user intot he db
 router.post("/api/signup", function(req, res) {
   db.User.create(req.body).then(data=>res.send(data))
+
 });
 
+router.get("/api/signin/", function(req, res){
+  
+})
 
 router.post("/api/signin/", function(req, res) {
   console.log("Checking DB for user....");
