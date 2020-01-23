@@ -278,6 +278,11 @@ body{
     border-top-color: #000;
 }
 
+li:hover {
+    
+    display: block;
+}
+
 
 /* @media only screen 
   and (min-width: 320px) 

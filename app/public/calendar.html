@@ -364,11 +364,30 @@
 
             // console.log("Date formatted: " + datePicked.toLocaleDateString("en-US"));
 
+            var dateFormatted = datePicked.toLocaleDateString("en-US");
             //Creating a dot
             var dot = document.createElement("i");
             dot.setAttribute("class", "dot");
-            document.querySelector("[data-calendar-day='" + datePicked.toLocaleDateString("en-US") + "']").append(dot);
+            var day = document.querySelector("[data-calendar-day='" + dateFormatted + "']");
+            day.append(dot);
+
+            var text = $("<div>");
+                text.attr("class", "calendar-label");
+                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+
+            var innerText = $("<p>");
+                innerText.append(dateFormatted + "<br>" + alcohol);
+
+                text.append(innerText);
+                text.append("<i>");
+
+            var textBody = $("body").append(text);
+
+            // day.addEventListener("mouseover", function() {
+            //     text.show();
+            // });
             // console.log("date added...");
+            
         });
 
         $(".alcoholBtn").on("click", function (event) {
