@@ -6,6 +6,10 @@ body{
     background-attachment: fixed;
 } 
 
+#logoImg{
+    width: 11%;
+}
+
 #logoutBtn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
