@@ -1,4 +1,4 @@
--- INSERT INTO alcohol (alcoholType, alcoholContent) 
+-- INSERT INTO Alcohol (alcoholType, alcoholContent) 
 -- VALUES 
 -- ('Beer, 6%'),
 -- ('Bloody Mary, 12%'),

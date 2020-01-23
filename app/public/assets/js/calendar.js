@@ -35,7 +35,7 @@
         view: 'date',
 
         date: new Date(),
-        format: 'yyyy/mm/dd',
+        format: 'mm/dd/yyyy',
 
         startWeek: 0,
 
