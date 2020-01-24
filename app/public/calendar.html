@@ -69,12 +69,13 @@
     <div class="mt-5 mx-auto" id="one">
     </div>
 
-    <div class="card mt-5" style="width: 18rem;">
+    <div class="card mt-5 mx-auto center addCard" style="width: 18rem;">
 
         <div class="card-body">
             <div id="alcoholAdded">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary" id="addBtn" data-toggle="modal"
+                    data-target="#exampleModal">
                     Add
                 </button>
             </div>
@@ -230,8 +231,18 @@
 
                     </div>
 
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
+                    <div class="mt-4">
+                        <div for="input" class="label-form title">Quantity</div>
+                        <input type="integer" class="form-control inputs" id="quantity">
+
+                    </div>
+                    <div class="mt-4">
+                        <div for="input" class="label-form title" >Price (USD)</div>
+                        <input type="integer" class="form-control inputs" id="price">
+                    </div>
+
+                    <!-- <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend-sm">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
                         </div>
                         <input type="text" class="form-control" aria-label="Sizing example input"
@@ -239,18 +250,17 @@
                     </div>
 
                     <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
+                        <div class="input-group-prepend-sm">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                         </div>
                         <input type="text" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
-                    </div>
+                    </div> -->
 
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save
-                        changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save</button>
                 </div>
             </div>
         </div>
@@ -372,14 +382,14 @@
             day.append(dot);
 
             var text = $("<div>");
-                text.attr("class", "calendar-label");
-                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+            text.attr("class", "calendar-label");
+            text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
 
             var innerText = $("<p>");
-                innerText.append(dateFormatted + "<br>" + alcohol);
+            innerText.append(dateFormatted + "<br>" + alcohol);
 
-                text.append(innerText);
-                text.append("<i>");
+            text.append(innerText);
+            text.append("<i>");
 
             var textBody = $("body").append(text);
 
@@ -387,7 +397,7 @@
             //     text.show();
             // });
             // console.log("date added...");
-            
+
         });
 
         $(".alcoholBtn").on("click", function (event) {

@@ -6,6 +6,16 @@ body{
     background-attachment: fixed;
 } 
 
+#logoImg{
+    width: 11%;
+}
+
+.inputs{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
  #login-btn, #signUp-btn-nav, #submit-btn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);

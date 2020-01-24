@@ -6,11 +6,12 @@ body{
     background-attachment: fixed;
 } 
 
+
 #logoImg{
     width: 11%;
 }
 
-#logoutBtn{
+#logoutBtn, #modalBtn, #addBtn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
     font-weight: bold;
@@ -21,33 +22,64 @@ body{
     padding-bottom:5px;
 }
 
-#logoutBtn:hover{
+#logoutBtn:hover, #modalBtn:hover, #addBtn:hover{
     background: rgba(255, 0, 0, 0.454);
 }
-#logoutBtn:focus{
+#logoutBtn:focus, #modalBtn:focus, #addBtn:focus{
     outline:none !important;
     box-shadow: none !important;
     border:rgba(255, 0, 0);
 }
 
 .alcohol-img{
+    /* background-color: white; */
+    width: 50%;
     
-    width: 40%;
 } 
-/* .alcoholBtn{
+.alcoholBtn{
    background-color: #fff !important;
-} */
+}
 .alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus{
    background-color: red;
 }
 
-.box{
+.addCard{
+    border-radius: 0px;
+    width: 100%;;
 
+
+}
+
+.inputs{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
+.inputs:focus, .inputs:active{
+    /* outline:none !important;
+    box-shadow: none !important;
+    border-color:black; */
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+.title{
+    font-weight: bold;
+}
+.box{
+    background-color: white;
     border: .5px solid black;
     text-align:center;
 }
 
 
+
+/* Calendar CSS */
 .calendar {
     text-align: center;
 }
@@ -59,8 +91,13 @@ body{
     border: 1px solid #e8e8e8;
 }
 
+.view{
+    margin-top: 12px;
+}
+
 .calendar-modal .view {
     box-shadow: 1px 2px 3px #ddd;
+    
 }
 
 .calendar-inner {
@@ -139,6 +176,8 @@ body{
     /* padding: 10px 0; */
     height: 30px;
     line-height: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .calendar-display {
