@@ -38,16 +38,19 @@
         var login_password = $("#login-password").val().trim();
         $.post("/api/signin", userData)
         
-          .then(data=>console.log(data))
+          .then(function(data){
+            var username_db = data.username;//this part is not working.
+            var password_db = data.password;//this part is not working.
+          console.log(data);
+          if(username_db===login_name&& login_password===password_db){
+            displayLoginName(login_name);
+            redirect();
+
+          }else{
+            alert("Your username or password is incorrect");
+          }
+      })
           .catch(err=>console.log(err));
-          var username_db = data.username;//this part is not working.
-          var password_db = data.password;//this part is not working.
-        
-        if(username_db===login_db&& login_password===password_db){
-          redirect();
-        }else{
-          alert("Your username or password is incorrect");
-        }
         
       }
 
@@ -55,13 +58,21 @@
         window.location.href = "/calendar";
       }
 
-      // function upsertUser(userData) {
-      //   $.post("/api/signin", userData)
-      //     .then(data=>console.log(data)).catch(err=>console.log(err))
-      //     // .then(function() {
-      //     //   window.location.href = "/calendar";
-      //     // });
-      // }
+      function displayLoginName(name){
+        console.log("User Name to print: ", name);
+        var divId = document.getElementById("namel");
+        var newName = $("<h2>");
+        newName.addClass("name-display");
+        newName.text(name);
+        divId.append(newName);
+        console.log(newName);
+    return newName;
+    
+    
+
+
+
+      }
     
       // Function for retrieving authors and getting them ready to be rendered to the page
       function getUsers() {
