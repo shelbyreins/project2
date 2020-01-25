@@ -69,7 +69,7 @@
     <div class="mt-5 mx-auto" id="one">
     </div>
 
-    <div class="card mt-5 mx-auto center addCard" style="width: 18rem;">
+    <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
 
         <div class="card-body">
             <div id="alcoholAdded">
@@ -302,9 +302,6 @@
         var data = [{
             date: now,
             value: "Testing"
-        }, {
-            date: "2020-01-24T08:00:00.000Z",
-            value: "pilsner"
         }];
 
         // inline
@@ -327,6 +324,7 @@
                     console.log('date:' + date)
                     console.log('data:' + (data || '无'));
                     datePicked = date;
+                    $("#addBtn").show();
                 },
                 viewChange: function (view, y, m) {
                     console.log(view, y, m)
@@ -354,6 +352,8 @@
 
         var alcohol;
 
+        var i = 0;
+
         $("#modalBtn").on("click", function (event) {
             event.preventDefault();
 
@@ -363,7 +363,7 @@
             console.log("Before: " + JSON.stringify(data));
             // data.push({ date: new Date(datePicked), value: alcohol });
 
-            console.log(data[1].date);
+            // console.log(data[1].date);
             console.log("After:" + JSON.stringify(data));
 
             // var cal = new Calendar();
@@ -382,8 +382,9 @@
             day.append(dot);
 
             var text = $("<div>");
-            text.attr("class", "calendar-label");
-            text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+                text.attr("class", "calendar-label");
+                text.attr("id", String(i));
+                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
 
             var innerText = $("<p>");
             innerText.append(dateFormatted + "<br>" + alcohol);
@@ -393,9 +394,13 @@
 
             var textBody = $("body").append(text);
 
-            // day.addEventListener("mouseover", function() {
-            //     text.show();
+            // day.hover(function(){
+            //     $("#" + i).css("display", "block");
             // });
+
+            // day.addEventListener("mouseover", showText("#" + String(i)));
+
+            i++;
             // console.log("date added...");
 
         });
@@ -411,6 +416,11 @@
         $(document).ready(function () {
             loadCalendar();
         });
+
+
+        // function showText(id) {
+        //     $(id).css("display", "block");
+        // }
     </script>
 
 
