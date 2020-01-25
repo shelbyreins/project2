@@ -1,24 +1,27 @@
-   
+   import sha256 from 'crypto-js/sha256';
+
     $(document).ready(function() {
         console.log("JSLOADED")
     //   // Getting references to the name,password and username, 
-    var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
       var age = $("#age");
       var username=$("#userName");
       var password=$("#password");
-      
+      var displayName = $("#userName").val().trim();
       $(document).on("click", "#signUp-btn", handleUserFormSubmit);
      
       // Getting the initial list of Users
       getUsers();
-    
+    //Function to encrypt password
+var pswdtoencryt=$("#password").val().trim();
+hashedPassword = CryptoJS.SHA256(pswdtoencryt);
+console.log("Hashed Password",hashedPassword);
+
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
         event.preventDefault();
         console.log('registering user...')
         // Don't do anything if the name fields hasn't been filled out
         if (!username.val().trim()|| !password.val().trim()||!age.val().trim()) {
-            console.log("Input not correct");
             alert("All required inputs are not entered")
           return;
         }
@@ -30,43 +33,32 @@
             name: $("#name").val().trim(),
             username: username.val().trim(),
             age: age.val().trim(),
-            password: password.val().trim(),
+            password:hashedPassword,
+            //password: password.val().trim(),
             gender: $("#gender").val().trim(),
             weight: $("#weight").val().trim(),
-            hasBlog: false
+            hasAlcohol: false,
         });
       }
     
-      // A function for creating a user. Calls getUserss upon completion
+      // A function for creating a user. 
       function upsertUser(userData) {
         $.post("/api/signup", userData)
-          .then(data=>console.log(data))
-
-          
+        .then(function(data){
+          var id = data.id;
+        console.log(data);
+        localStorage.setItem("userid", id);
+       
+        })
           .catch(err=>console.log(err))
-          // .then(function() {
-          //   
-          // });
+        
           redirect();
       }
     
       function redirect(){
-        alert("Welcome to Buzzbuddy,", username)
+        alert("Welcome to Buzzbuddy,"+ displayName);
         window.location.href = "/calendar";
       }
 
-      function getUsers() {
-        $.get("/api/signup", function(data) {
-          var rowsToAdd = [];
-          for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createUserRow(data[i]));
-          }
-          renderUserList(rowsToAdd);
-          name.val("");
-        })
-       
-      }
-    
-      
     });
     

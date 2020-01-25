@@ -1,7 +1,6 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
-        var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
       //Getting references for sing-in
       var loginName= $("#login-email");
       var loginPassword=$("#login-password");
@@ -9,7 +8,7 @@
       $(document).on("click", "#login-btn", handleUserFormSubmit);
      
       // Getting the initial list of Users
-      getUsers();
+      
       var name = $("#login-email").val();
       console.log(name);
       // A function to handle what happens when the form is submitted to register a new User
@@ -31,7 +30,7 @@
       }
       
 
-      //A function for creating a user. Calls getUserss upon completion
+      //A function for logging a user. 
       function upsertUser(userData) {
         console.log($("#login-email").val().trim());
         var login_name = $("#login-email").val().trim();
@@ -65,6 +64,7 @@
 
       function home(){
         window.location.href = "/home"
+         localStorage.clear();
       }
       // function displayLoginName(name){
       //   console.log("User Name to print: ", name);
@@ -75,19 +75,6 @@
       //   divId.append(newName);
       //   console.log(newName);
       // }
-    
-      // Function for retrieving authors and getting them ready to be rendered to the page
-      function getUsers() {
-        $.get("/api/signin", function(data) {
-          var rowsToAdd = [];
-          for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createUserRow(data[i]));
-          }
-          renderUserList(rowsToAdd);
-          name.val("");
-        });
-      }
-    
       
     });
     
