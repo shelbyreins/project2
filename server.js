@@ -1,6 +1,7 @@
 var express = require("express");
 
 var bodyParser = require("body-parser");
+var SHA256 = require("crypto-js/sha256");
 
 var app = express();
 
@@ -18,7 +19,7 @@ app.use(htmlRoutes);
 var apiRoutes = require("./app/routes/api-routes");
 app.use(apiRoutes);
 
-
+// app.use(console.log(SHA256("Message")));
 
 
 

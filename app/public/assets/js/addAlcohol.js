@@ -1,10 +1,7 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
-        var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-      //Getting references for sing-in
-    //   var loginName= $("#login-email");
-    //   var loginPassword=$("#login-password");
+      
 var alcohol = $(".alcoholBtn");
 
 
@@ -55,16 +52,12 @@ function getAlcohol(alcohol) {
       }
       
 
-      //A function for creating a user. Calls getUserss upon completion
+      //A function for creating creating an entry in the alcoholuser. Joins Alcohol table and user table
       function upsertUser(userData) {
         $.post("/api/alcoholuser", userData)
           .then(data=>console.log(data))
-
-          
           .catch(err=>console.log(err))
-          // .then(function() {
-          //   
-          // });
+          
           redirect();
       }
 
@@ -77,29 +70,8 @@ function getAlcohol(alcohol) {
 
       function home(){
         window.location.href = "/"
+        localStorage.removeItem("userid");
+          localStorage.removeItem("alcoholid");
       }
-      // function displayLoginName(name){
-      //   console.log("User Name to print: ", name);
-      //   var divId = document.getElementById("namel");
-      //   var newName = $("<h2>");
-      //   newName.addClass("name-display");
-      //   newName.text(name);
-      //   divId.append(newName);
-      //   console.log(newName);
-      // }
-    
-      // Function for retrieving authors and getting them ready to be rendered to the page
-      function getUsers() {
-        $.get("/api/signin", function(data) {
-          var rowsToAdd = [];
-          for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createUserRow(data[i]));
-          }
-          renderUserList(rowsToAdd);
-          name.val("");
-        });
-      }
-    
-      
     });
     
