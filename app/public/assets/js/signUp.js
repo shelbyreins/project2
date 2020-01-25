@@ -2,6 +2,7 @@
     $(document).ready(function() {
         console.log("JSLOADED")
     //   // Getting references to the name,password and username, 
+    var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
       var age = $("#age");
       var username=$("#userName");
       var password=$("#password");
@@ -32,6 +33,7 @@
             password: password.val().trim(),
             gender: $("#gender").val().trim(),
             weight: $("#weight").val().trim(),
+            hasBlog: false
         });
       }
     
@@ -49,6 +51,7 @@
       }
     
       function redirect(){
+        alert("Welcome to Buzzbuddy,", username)
         window.location.href = "/calendar";
       }
 

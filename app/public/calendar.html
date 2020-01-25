@@ -66,15 +66,22 @@
         <button type="button" class="btn btn-primary ml-auto" id="logoutBtn">Logout</button>
     </nav>
 
-    <div class="mt-5 mx-auto" id="one">
+    <div class="container-fluid">
+        <div class="row  justify-content-center">
+            <div class="col-sm-6">
+                <div class="mt-5 mx-auto" id="one">
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
 
         <div class="card-body">
             <div id="alcoholAdded">
 
-                <button type="button" class="btn btn-primary" id="addBtn" data-toggle="modal"
+                <button type="button" id="add-btn" class="btn btn-primary" data-toggle="modal"
                     data-target="#exampleModal">
                     Add
                 </button>
@@ -237,15 +244,15 @@
 
                     </div>
                     <div class="mt-4">
-                        <div for="input" class="label-form title" >Price (USD)</div>
+                        <div for="input" class="label-form title">Price (USD)</div>
                         <input type="integer" class="form-control inputs" id="price">
                     </div>
 
                     <!-- <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend-sm">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm ">Quantity</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
+                        <input type="text" class="form-control quantity" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
                     </div>
 
@@ -253,14 +260,14 @@
                         <div class="input-group-prepend-sm">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
+                        <input type="text" class="form-control price" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
-                    </div> -->
+                    </div>  -->
 
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save</button>
+                    <button type="button" id="save-data" class="btn btn-primary" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>
@@ -282,10 +289,13 @@
 
 
     <script src="/assets/js/calendar.js"></script>
+    <script src="/assets/js/addAlcohol.js"> </script>
 
 
     <script>
-
+        //  function redirect(){
+        //     window.location.href = "/calendar";
+        //  }
 
         var now = new Date();
         var year = now.getFullYear();
@@ -313,7 +323,7 @@
             var $ca = $('#one').calendar({
                 // view: 'month',
                 width: 500,
-                height: 450,
+                height: 430,
                 // startWeek: 0,
                 // selectedRang: [new Date(), null],
                 data: data,
@@ -382,9 +392,9 @@
             day.append(dot);
 
             var text = $("<div>");
-                text.attr("class", "calendar-label");
-                text.attr("id", String(i));
-                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+            text.attr("class", "calendar-label");
+            text.attr("id", String(i));
+            text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
 
             var innerText = $("<p>");
             innerText.append(dateFormatted + "<br>" + alcohol);

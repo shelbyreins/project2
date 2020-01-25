@@ -6,14 +6,18 @@ body{
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    /* position: fixed; */
 } 
 
+#one{
+    width:100%;
+}
 
 #logoImg{
     width: 11%;
 }
 
-#logoutBtn, #modalBtn, #addBtn{
+#logoutBtn, #save-data, #add-btn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
     font-weight: bold;
@@ -24,10 +28,10 @@ body{
     padding-bottom:5px;
 }
 
-#logoutBtn:hover, #modalBtn:hover, #addBtn:hover{
+#logoutBtn:hover, #save-data:hover, #add-btn:hover{
     background: rgba(255, 0, 0, 0.454);
 }
-#logoutBtn:focus, #modalBtn:focus, #addBtn:focus{
+#logoutBtn:focus, #save-data:focus, #add-btn:focus{
     outline:none !important;
     box-shadow: none !important;
     border:rgba(255, 0, 0);
@@ -80,10 +84,10 @@ body{
 }
 
 
-
 /* Calendar CSS */
 .calendar {
     text-align: center;
+    width:100%;
 }
 
 .calendar-modal {
@@ -95,6 +99,8 @@ body{
 
 .view{
     margin-top: 12px;
+    width: 100%;
+
 }
 
 .calendar-modal .view {
@@ -137,6 +143,7 @@ body{
     transform: rotateY(180deg);
     visibility: hidden;
     z-index: 1;
+    width:100%;
 }
 
 .calendar-d .view-date,
@@ -156,7 +163,10 @@ body{
 
 .calendar-views {
     width: 100%;
+    position:fixed;
+    margin: 0,
 }
+
 
 .calendar .view,
 .calendar-display,
@@ -338,5 +348,14 @@ li:hover {
     }
     .calendar{
         width: 100%;
+        position: relative;
+
     }
   } */
+
+  /* @media only screen 
+and (min-width: 300px) 
+and (min-width: 480px) 
+and (max-width: 576px){
+    
+} */

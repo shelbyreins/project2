@@ -29,6 +29,21 @@ router.post("/api/signin/", function(req, res) {
   }).then(data=>res.send(data))
 });
 
+router.post("/api/alcoholuser/", function(req, res) {
+  console.log("Ading alcohol countr....");
+  console.log(req);
+  // console.log(req.params.username);
+  db.Alcoholuser.create(req.body).then(data=>res.send(data))
+});
+
+router.post("/api/alcohol/", function(req,res){
+  console.log("checking for alcohol id.....")
+  db.Alcohol.findOne({
+    where:{
+      alcoholType: req.body.alcohol
+    }
+  }).then(data=>res.send(data));
+})
 router.put("/api/log/:id", function(req, res) {
 
 });

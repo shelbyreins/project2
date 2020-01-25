@@ -98,7 +98,8 @@
         MARK_DAY_HTML = '<i class="dot"></i>',
         DATE_DIS_TPL = '{year}/<span class="m">{month}</span>',
 
-        ITEM_STYLE = 'style="width:{w}px;height:{h}px;line-height:{h}px"',
+        ITEM_STYLE = `style="width: {w}px ;height:{h}px; line-height:{h}px"`,
+
         WEEK_ITEM_TPL = '<li ' + ITEM_STYLE + '>{wk}</li>',
         DAY_ITEM_TPL = '<li ' + ITEM_STYLE + ' class="{class}" {action}="{date}">{value}</li>',
         MONTH_ITEM_TPL = '<li ' + ITEM_STYLE + ' ' + ITEM_MONTH + '>{m}</li>',
@@ -137,6 +138,7 @@
         ],
         OS = Object.prototype.toString;
 
+    // console.log(OS.ITEM_STYLE);
     // utils
 
     function isDate(obj) {
@@ -587,7 +589,7 @@
             var arr = this.$disDate.html().split('/'),
                 y = Number(arr[0]),
                 m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
-                console.log("m: " + m);
+            console.log("m: " + m);
 
             return [y, m];
         },
@@ -721,13 +723,25 @@
             var w = this.width,
                 h = this.height,
                 hdH = this.$element.find('.calendar-hd').outerHeight();
+            console.log("=====================" + w)
+            // if (w === 500) {
+                //  this.$element[0].style.cssText = "width: 100%; height: 100vh";
+            //     this.$element.width(w).height(h + hdH)
+                
+            //     .find('.view-date')
+            //     .css('width', w + '%');
+            // this.$element.find('.calendar-ct').width(w).height(h);
 
-            this.$element.width(w).height(h + hdH)
-                .find('.calendar-inner, .view')
-                .css('width', w + 'px');
+            // console.log(this.$element[0].style.cssText);
+            
+            // } else {
+                this.$element.width(w).height(h + hdH)
+                    .find('.calendar-inner, .view')
+                    .css('width', w + 'px');
 
-            this.$element.find('.calendar-ct').width(w).height(h);
-
+                this.$element.find('.calendar-ct').width(w).height(h);
+            // }
+            
         },
         init: function () {
 

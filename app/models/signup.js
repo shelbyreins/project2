@@ -1,6 +1,12 @@
 //structure for new user
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -41,17 +47,12 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
+      hasAlcohol: DataTypes.BOOLEAN,
     });
   
-    // User.associate = function(models) {
-    //   // We're saying that a Post should belong to an Author
-    //   // A Post can't be created without an Author due to the foreign key constraint
-    //   User.hasMany(models.User, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // };
+    User.associate = function(models) {
+      models.User.hasMany(models.Alcohol, { onDelete: 'cascade' });
+  };
   
     return User;
   };
