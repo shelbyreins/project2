@@ -4,9 +4,7 @@ var db = require('../models');
 
 var router = express.Router();
 
-router.get("/api/log", function(req, res) {
 
-});
 
 //to insert a new user into the db
 router.post("/api/signup", function(req, res) {
@@ -29,9 +27,6 @@ router.post("/api/signin/", function(req, res) {
   }).then(data=>res.send(data))
 });
 
-router.put("/api/log/:id", function(req, res) {
-
-});
 
 
 
