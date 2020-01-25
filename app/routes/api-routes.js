@@ -11,14 +11,10 @@ router.post("/api/signup", function(req, res) {
 
 });
 
-<<<<<<< HEAD
-//User Sign in
-=======
-router.get("/api/signin/", function(req, res){
-  
-})
 
->>>>>>> 9744e5a45bb38bb5dfbb8e17cfd4c7fac32754dc
+//User Sign in
+
+
 router.post("/api/signin/", function(req, res) {
   console.log("Checking DB for user....");
   console.log(req);
