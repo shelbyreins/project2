@@ -10,14 +10,14 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [5, 10]
+          len: [1]
         }
       },
       hasAlcohol: DataTypes.BOOLEAN
     });
   
     User.associate = function(models) {
-      models.User.hasMany(models.Alcohol, { onDelete: 'cascade' });
+      models.User.hasMany(models.Alcoholuser, { onDelete: 'cascade' });
   };
   
     return User;
