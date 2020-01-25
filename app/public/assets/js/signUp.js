@@ -26,7 +26,7 @@ console.log("Hashed Password",hashedPassword);
           return;
         }
         // else if(age.val() >= 21){
-        //   alert("You must be 21 to use of site")
+        //   alert("You must be 21 to use the site")
         // }
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({

@@ -5,19 +5,27 @@ var db = require('../models');
 var router = express.Router();
 
 
-//to insert a new user intot he db
+//to insert a new user into the db
 router.post("/api/signup", function(req, res) {
   db.User.create(req.body).then(data=>res.send(data))
+
 });
 
+<<<<<<< HEAD
 //User Sign in
+=======
+router.get("/api/signin/", function(req, res){
+  
+})
+
+>>>>>>> 9744e5a45bb38bb5dfbb8e17cfd4c7fac32754dc
 router.post("/api/signin/", function(req, res) {
   console.log("Checking DB for user....");
   console.log(req);
   // console.log(req.params.username);
   db.User.findOne({
     where: {username:req.body.username
-            
+      
     }
   }).then(data=>res.send(data))
 });
