@@ -1,12 +1,15 @@
 var express = require("express");
 var path = require("path");
 var db = require('../models');
-
+var SHA256 = require('crypto-js/sha256');
+var crypto = require('crypto-js')
 var router = express.Router();
 
 
 //to insert a new user into the db
 router.post("/api/signup", function(req, res) {
+  req.body.password = JSON.stringify(SHA256(req.body.password));
+  console.log(req.body)
   db.User.create(req.body).then(data=>res.send(data))
 
 });
@@ -23,7 +26,14 @@ router.post("/api/signin/", function(req, res) {
     where: {username:req.body.username
       
     }
-  }).then(data=>res.send(data))
+  }).then(data=>{
+    console.log(data.dataValues)
+    if(JSON.stringify(SHA256(req.body.password)) === data.dataValues.password){
+      res.send(data)
+    }else{
+      res.send(null)
+    }
+  })
 });
 
 //Loggin alcohol count
