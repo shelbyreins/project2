@@ -44,8 +44,8 @@ function getAlcohol(alcohol) {
             alcohol:alcohol,
             count: $(".quantity").val().trim(),
             price: $(".price").val(),
-            userId:userid,
-            AlcoholId:alcoholid,
+            UserId:userid,
+            alcoholId:alcoholid,
         });
         
       }
