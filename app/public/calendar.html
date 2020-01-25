@@ -74,7 +74,7 @@
         <div class="card-body">
             <div id="alcoholAdded">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" id ="add-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Add
                 </button>
             </div>
@@ -232,9 +232,9 @@
 
                     <div class="input-group input-group-sm mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
+                            <span class="input-group-text" id="inputGroup-sizing-sm ">Quantity</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
+                        <input type="text" class="form-control quantity" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
                     </div>
 
@@ -242,14 +242,14 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
+                        <input type="text" class="form-control price" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
                     </div>
 
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save
+                    <button type="button" id="save-data" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save
                         changes</button>
                 </div>
             </div>
@@ -271,10 +271,13 @@
 
 
     <script src="/assets/js/calendar.js"></script>
+    <script src= "/assets/js/addAlcohol.js"> </script>
 
 
     <script>
-
+//  function redirect(){
+//     window.location.href = "/calendar";
+//  }
 
         var now = new Date();
         var year = now.getFullYear();
