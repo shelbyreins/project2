@@ -1,20 +1,21 @@
-   import sha256 from 'crypto-js/sha256';
+  //  import CryptoJS from 'crypto-js';
 
     $(document).ready(function() {
+      
         console.log("JSLOADED")
     //   // Getting references to the name,password and username, 
       var age = $("#age");
       var username=$("#userName");
       var password=$("#password");
-      var displayName = $("#userName").val().trim();
+      var displayName ;
       $(document).on("click", "#signUp-btn", handleUserFormSubmit);
      
       // Getting the initial list of Users
       getUsers();
     //Function to encrypt password
-var pswdtoencryt=$("#password").val().trim();
-hashedPassword = CryptoJS.SHA256(pswdtoencryt);
-console.log("Hashed Password",hashedPassword);
+// var pswdtoencryt=$("#password").val().trim();
+// hashedPassword = CryptoJS.SHA256(pswdtoencryt);
+// console.log("Hashed Password",hashedPassword);
 
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
@@ -26,14 +27,14 @@ console.log("Hashed Password",hashedPassword);
           return;
         }
         // else if(age.val() >= 21){
-        //   alert("You must be 21 to use the site")
+        //   alert("You must be 21 to use of site")
         // }
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({
             name: $("#name").val().trim(),
             username: username.val().trim(),
             age: age.val().trim(),
-            password:hashedPassword,
+            password:password.val().trim(),
             //password: password.val().trim(),
             gender: $("#gender").val().trim(),
             weight: $("#weight").val().trim(),
@@ -45,14 +46,12 @@ console.log("Hashed Password",hashedPassword);
       function upsertUser(userData) {
         $.post("/api/signup", userData)
         .then(function(data){
-          var id = data.id;
-        console.log(data);
-        localStorage.setItem("userid", id);
-       
+          console.log(data);
+          displayName = data.name
+       localStorage.setItem("currentUser", JSON.stringify(data))
+       redirect();
         })
           .catch(err=>console.log(err))
-        
-          redirect();
       }
     
       function redirect(){

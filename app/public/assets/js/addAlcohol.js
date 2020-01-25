@@ -1,9 +1,10 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
-      
+   var currentUser =  JSON.parse(localStorage.getItem("currentUser"))
 var alcohol = $(".alcoholBtn");
 
+$('#userName').append(`<span id="userWelcome">Welcome To Buzz Buddy ${currentUser.name}!</span>`)
 
     $(".alcoholBtn").on("click", function (event) {
         event.preventDefault();
@@ -30,14 +31,13 @@ function getAlcohol(alcohol) {
       
       // Getting the initial list of Users
       
-      console.log(name);
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
         event.preventDefault();
         console.log('adding alcohol count...')
         // Don't do anything if the name fields hasn't been filled out
         // Calling the upsertUserr function and passing in the value of the name input
-        var userid = localStorage.getItem("userid");
+        var userid = currentUser.id;
         var alcoholid = localStorage.getItem("alcoholid")
 
         upsertUser({
@@ -46,7 +46,6 @@ function getAlcohol(alcohol) {
             price: $(".price").val(),
             userId:userid,
             AlcoholId:alcoholid,
-
         });
         
       }
@@ -70,8 +69,7 @@ function getAlcohol(alcohol) {
 
       function home(){
         window.location.href = "/"
-        localStorage.removeItem("userid");
-          localStorage.removeItem("alcoholid");
+        localStorage.clear()
       }
     });
     
