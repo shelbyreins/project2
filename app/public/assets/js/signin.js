@@ -1,11 +1,6 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
-<<<<<<< HEAD
-=======
-
-        var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
->>>>>>> 9744e5a45bb38bb5dfbb8e17cfd4c7fac32754dc
       //Getting references for sing-in
 
 
@@ -46,37 +41,15 @@
 
       //A function for logging a user. 
       function upsertUser(userData) {
-        console.log($("#login-email").val().trim());
-        var login_name = $("#login-email").val().trim();
-        var login_password = $("#login-password").val().trim();
         $.post("/api/signin", userData)
         
           .then(function(data){
-            var id = data.id;
-            var username_db = data.username;
-            var password_db = data.password;
           console.log(data);
-          if(username_db===login_name&& login_password===password_db){
             // displayLoginName(login_name);
-            localStorage.setItem("userid", id);
+            localStorage.setItem("currentUser", JSON.stringify(data));
             redirect();
-            
-          }else{
-            alert("Your username or password is incorrect");
-          }
       })
-          .catch(err=>console.log(err));
-
-          var username_db = data.username;//this part is not working.
-          var password_db = data.password;//this part is not working.
-        
-        if(login_name === username_db && login_password===password_db){
-          redirect();
-        }else{
-          alert("Your username or password is incorrect");
-        }
-
-        
+      .catch(err=>console.log(err));   
       }
 
       function redirect(){
