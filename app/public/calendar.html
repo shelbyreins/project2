@@ -62,14 +62,14 @@
 <body>
 
     <nav class="navbar navbar-light" style="background-color: #ffffff;">
-        <img src="/assets/images/logo1.png" alt="logo" style="width: 40%; ">
+        <img src="/assets/images/logo1.png" alt="logo" id="logoImg" class="ml-3">
         <button type="button" class="btn btn-primary ml-auto" id="logoutBtn">Logout</button>
     </nav>
 
     <div class="mt-5 mx-auto" id="one">
     </div>
 
-    <div class="card mt-5" style="width: 18rem;">
+    <div class="card mt-5" id="addBtn" style="width: 18rem; display: none;">
 
         <div class="card-body">
             <div id="alcoholAdded">
@@ -259,7 +259,8 @@
 
 
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -298,27 +299,32 @@
 
         // inline
         var datePicked;
+        var monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-        var $ca = $('#one').calendar({
-            // view: 'month',
-            width: 500,
-            height: 450,
-            // startWeek: 0,
-            // selectedRang: [new Date(), null],
-            data: data,
-            monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            date: new Date(year, month, date),
-            onSelected: function (view, date, data) {
-                console.log('view:' + view)
-                console.log('date:' + date)
-                console.log('data:' + (data || '无'));
-                datePicked = date;
-            },
-            viewChange: function (view, y, m) {
-                console.log(view, y, m)
+        function loadCalendar() {
 
-            }
-        });
+            var $ca = $('#one').calendar({
+                // view: 'month',
+                width: 500,
+                height: 450,
+                // startWeek: 0,
+                // selectedRang: [new Date(), null],
+                data: data,
+                monthArray: monthArray,
+                date: new Date(year, month, date),
+                onSelected: function (view, date, data) {
+                    console.log('view:' + view)
+                    console.log('date:' + date)
+                    console.log('data:' + (data || '无'));
+                    datePicked = date;
+                    $("#addBtn").show();
+                },
+                viewChange: function (view, y, m) {
+                    console.log(view, y, m)
+
+                }
+            });
+        }
 
         // picker
         $('#two').calendar({
@@ -337,17 +343,9 @@
             }
         });
 
-        // Dynamic elements
-        var $demo = $('#demo');
-        var UID = 1;
-        $('#add').click(function () {
-            $demo.append('<input id="input-' + UID + '"><div id="ca-' + UID + '"></div>');
-            $('#ca-' + UID).calendar({
-                trigger: '#input-' + UID++
-            })
-        })
-
         var alcohol;
+
+        var i = 0;
 
         $("#modalBtn").on("click", function (event) {
             event.preventDefault();
@@ -355,25 +353,49 @@
             console.log("Modal button working...");
             console.log("datePicked: " + datePicked);
 
-            data.push({ date: datePicked, value: alcohol });
+            console.log("Before: " + JSON.stringify(data));
+            // data.push({ date: new Date(datePicked), value: alcohol });
 
-            //             $('#one').calendar({
+            // console.log(data[1].date);
+            console.log("After:" + JSON.stringify(data));
 
-            //                 data: [
+            // var cal = new Calendar();
 
-            //                     {
+            // $("#one").calendar(cal.setDate(new Date(datePicked)), alcohol);
+            // $("#one").load(location.href + " #one>*", "");
+            loadCalendar();
 
-            //                         date: datePicked,
+            // console.log("Date formatted: " + datePicked.toLocaleDateString("en-US"));
 
-            //                         value: alcohol
+            var dateFormatted = datePicked.toLocaleDateString("en-US");
+            //Creating a dot
+            var dot = document.createElement("i");
+            dot.setAttribute("class", "dot");
+            var day = document.querySelector("[data-calendar-day='" + dateFormatted + "']");
+            day.append(dot);
 
-            //                     }
-            //                 ]
+            var text = $("<div>");
+                text.attr("class", "calendar-label");
+                text.attr("id", String(i));
+                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
 
+            var innerText = $("<p>");
+                innerText.append(dateFormatted + "<br>" + alcohol);
+
+                text.append(innerText);
+                text.append("<i>");
+
+            var textBody = $("body").append(text);
+
+            // day.hover(function(){
+            //     $("#" + i).css("display", "block");
             // });
 
-            // $("#one").calendar(alcohol);
+            // day.addEventListener("mouseover", showText("#" + String(i)));
+
+            i++;
             // console.log("date added...");
+            
         });
 
         $(".alcoholBtn").on("click", function (event) {
@@ -384,6 +406,14 @@
             console.log("this value: " + alcohol);
         });
 
+        $(document).ready(function () {
+            loadCalendar();
+        });
+
+
+        // function showText(id) {
+        //     $(id).css("display", "block");
+        // }
     </script>
 
 

@@ -8,11 +8,15 @@ router.get("/api/log", function(req, res) {
 
 });
 
-//to insert a new user intot he db
+//to insert a new user into the db
 router.post("/api/signup", function(req, res) {
   db.User.create(req.body).then(data=>res.send(data))
+
 });
 
+router.get("/api/signin/", function(req, res){
+  
+})
 
 router.post("/api/signin/", function(req, res) {
   console.log("Checking DB for user....");
@@ -20,7 +24,7 @@ router.post("/api/signin/", function(req, res) {
   // console.log(req.params.username);
   db.User.findOne({
     where: {username:req.body.username
-            
+      
     }
   }).then(data=>res.send(data))
 });

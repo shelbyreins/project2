@@ -1,8 +1,13 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
+
         var userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
       //Getting references for sing-in
+
+
+      //Getting references for sign-in
+
       var loginName= $("#login-email");
       var loginPassword=$("#login-password");
       
@@ -11,15 +16,20 @@
       // Getting the initial list of Users
       getUsers();
       var name = $("#login-email").val();
-      console.log(name);
+     
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
         event.preventDefault();
         console.log('signing in user...')
+        console.log(name);
         // Don't do anything if the name fields hasn't been filled out
         if (!loginName.val().trim()|| !loginPassword.val().trim()) {
+
             console.log("Input not correct");
             // alert("All required inputs are not entered")
+
+             console.log("Input not correct");
+
           return;
         }
         // Calling the upsertUserr function and passing in the value of the name input
@@ -53,6 +63,16 @@
           }
       })
           .catch(err=>console.log(err));
+
+          var username_db = data.username;//this part is not working.
+          var password_db = data.password;//this part is not working.
+        
+        if(login_name === username_db && login_password===password_db){
+          redirect();
+        }else{
+          alert("Your username or password is incorrect");
+        }
+
         
       }
 

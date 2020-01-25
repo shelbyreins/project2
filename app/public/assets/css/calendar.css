@@ -1,3 +1,5 @@
+html{ overflow-y: scroll;}
+
 body{
     background:url(/assets/images/alcohol-background.jpg);
     background-size: cover;
@@ -5,6 +7,10 @@ body{
     background-position: center center;
     background-attachment: fixed;
 } 
+
+#logoImg{
+    width: 11%;
+}
 
 #logoutBtn{
     background: rgba(255, 0, 0);
@@ -276,6 +282,11 @@ body{
     margin-left: -3px;
     border: 6px solid transparent;
     border-top-color: #000;
+}
+
+li:hover {
+    
+    display: block;
 }
 
 
