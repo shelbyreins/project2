@@ -29,7 +29,7 @@ router.post("/api/signin/", function(req, res) {
   }).then(data=>{
     console.log(data.dataValues)
     if(JSON.stringify(SHA256(req.body.password)) === data.dataValues.password){
-      res.send(data.dataValues)
+      res.send(data)
     }else{
       res.send(null)
     }
@@ -51,10 +51,8 @@ router.post("/api/alcohol/", function(req,res){
     where:{
       alcoholType: req.body.alcohol
     }
-  }).then(data=>{
-    console.log("Alcohol Data: " + data);
-    res.send(data)
-  });
+  }).then(data=>res.send(data)
+  );
 })
 router.put("/api/log/:id", function(req, res) {
 
