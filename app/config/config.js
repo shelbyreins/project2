@@ -1,10 +1,10 @@
  
- {
+ module.exports = {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "user_db",
-    "host": "127.0.0.1",
+    "username": "gj7x1r39or3c4cet",
+    "password": "gtv1ht9m204dop4b",
+    "database": "mm3trey8zy040z2o",
+    "host": "h40lg7qyub2umdvb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -15,11 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "password",
-    "database": "user_db",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-
 }
