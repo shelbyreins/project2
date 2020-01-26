@@ -246,8 +246,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" id="save-data" class="btn btn-primary" data-dismiss="modal" id="modalBtn">Save
-                        changes</button>
+                    <button type="button" id="save-data" class="btn btn-primary" data-dismiss="modal">
+                        Save changes
+                    </button>
                 </div>
             </div>
         </div>
@@ -345,7 +346,7 @@
 
         var i = 0;
 
-        $("#modalBtn").on("click", function (event) {
+        $("#save-data").on("click", function (event) {
             event.preventDefault();
 
             console.log("Modal button working...");
