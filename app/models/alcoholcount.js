@@ -14,20 +14,22 @@ module.exports = function(sequelize, DataTypes) {
         price: {
             type: DataTypes.INTEGER,   
         },
-        userId: {
-            type: DataTypes.INTEGER
-        },
+        
         alcoholId: {
             type: DataTypes.INTEGER
         }
     });
 
     Alcoholuser.associate = function(models) {
+        models.Alcoholuser.hasMany(models.User, { onDelete: 'cascade' });
+    };
+
+    Alcoholuser.associate = function(models) {
         models.Alcoholuser.belongsTo(models.Alcohol);
-    }
+    };
     Alcoholuser.associate = function(models) {
         models.Alcoholuser.belongsTo(models.User);
-    }
+    };
 
     return Alcoholuser;
 }

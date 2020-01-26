@@ -1,5 +1,5 @@
    
-    $(document).ready(function() {
+    // $(document).ready(function() {
         console.log("JSLOADED")
    var currentUser =  JSON.parse(localStorage.getItem("currentUser"))
 var alcohol = $(".alcoholBtn");
@@ -42,10 +42,10 @@ function getAlcohol(alcohol) {
 
         upsertUser({
             alcohol:alcohol,
-            count: $(".quantity").val().trim(),
+            count: $(".quantity").val(),
             price: $(".price").val(),
-            userId:userid,
-            AlcoholId:alcoholid,
+            UserId:userid,
+            alcoholId:alcoholid,
         });
         
       }
@@ -57,7 +57,7 @@ function getAlcohol(alcohol) {
           .then(data=>console.log(data))
           .catch(err=>console.log(err))
           
-          redirect();
+          // redirect();
       }
 
       function redirect(){
@@ -71,5 +71,5 @@ function getAlcohol(alcohol) {
         window.location.href = "/"
         localStorage.clear()
       }
-    });
+    // });
     

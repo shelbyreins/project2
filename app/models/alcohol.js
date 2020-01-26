@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Alcohol.associate = function(models) {
-        models.Alcohol.hasMany(models.Alcoholuser, { onDelete: 'cascade' });
+        models.Alcohol.belongsTo(models.User, { onDelete: 'cascade' });
     };
 
    

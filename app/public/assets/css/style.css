@@ -2,12 +2,12 @@ body{
     background:url(/assets/images/alcohol-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
-    /* position: fixed; */
+    /* background-position: center;
+    position: fixed; */
     background-attachment: fixed;
     margin-right: 0;
     margin-left: 0;
-    margin-top:0;
+    margin-top:0; 
 } 
 
 #logoImg{

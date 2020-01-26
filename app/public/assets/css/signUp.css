@@ -2,9 +2,9 @@ body{
     background:url(/assets/images/alcohol-background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    /* background-position: center center; */
     background-attachment: fixed;
-    position: fixed;
+    /* position: fixed; */
 } 
 
 .card{
@@ -18,7 +18,7 @@ body{
     margin-top: 35px;
 }
 #signUp-logo{
-    width: 15%;
+    width: 5%;
 }
 .label-form{
     font-weight: bold;
@@ -78,11 +78,10 @@ select:not([multiple]) {
 
 
  @media only screen 
-  and (min-width: 300px) 
-  and (min-width: 480px) 
-  and (max-width: 576px){
+  and (min-width: 480px)
+  and (min-width: 300px)  {
     #signUp-logo{
-        width: 40%;
+        width: 30%;
     }
     #signUp-title{
         font-size: 1.5em;
@@ -92,7 +91,7 @@ select:not([multiple]) {
     #signUp-btn{
        position: relative;
         text-align: center;
-        width: 30%;
+        width: 15%;
         font-size: 1em;
         background: red;
         border: red;
