@@ -41,7 +41,6 @@ function getAlcohol(alcohol) {
         var alcoholid = localStorage.getItem("alcoholid")
 
         upsertUser({
-            alcohol:alcohol,
             count: $("#quantity").val(),
             price: $("#price").val(),
             UserId:userid,
