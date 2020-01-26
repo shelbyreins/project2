@@ -46,7 +46,7 @@
           .then(function(data){
           console.log(data);
             // displayLoginName(login_name);
-            localStorage.setItem("currentUser", JSON.stringify(data));
+            localStorage.setItem("currentUser", JSON.stringify(data.dataValues.id));
             redirect();
       })
       .catch(err=>console.log(err));   
