@@ -29,7 +29,7 @@ router.post("/api/signin/", function(req, res) {
   }).then(data=>{
     console.log(data.dataValues)
     if(JSON.stringify(SHA256(req.body.password)) === data.dataValues.password){
-      res.send(data)
+      res.send(data.dataValues)
     }else{
       res.send(null)
     }
