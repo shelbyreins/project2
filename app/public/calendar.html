@@ -75,7 +75,8 @@
         <div class="card-body">
             <div id="alcoholAdded">
 
-                <button type="button" id ="add-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" id="add-btn" class="btn btn-primary" data-toggle="modal"
+                    data-target="#exampleModal">
                     Add
                 </button>
             </div>
@@ -103,7 +104,7 @@
                                 <button name="subject" type="submit" value="beer" class="alcoholBtn"><img
                                         class="alcohol-img mt-3 mb-2" src="/assets/images/beer.png" alt=""></button>
 
-                                <div  class="alcohol-type mb-3">Beer</div>
+                                <div class="alcohol-type mb-3">Beer</div>
                             </div>
                             <div class="col-sm-3 p-0 box">
                                 <button name="subject" type="submit" value="bloodyMary" class="alcoholBtn"><img
@@ -231,20 +232,15 @@
 
                     </div>
 
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm ">Quantity</span>
-                        </div>
-                        <input type="text" class="form-control quantity" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
-                    </div>
 
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
-                        </div>
-                        <input type="text" class="form-control price" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm">
+                    <div class="mt-4">
+                        <div for="input" class="label-form title">Quantity</div>
+                        <input type="integer" class="form-control inputs" id="quantity">
+
+                    </div>
+                    <div class="mt-4">
+                        <div for="input" class="label-form title">Price (USD)</div>
+                        <input type="integer" class="form-control inputs" id="price">
                     </div>
 
                 </div>
@@ -273,13 +269,16 @@
 
 
     <script src="/assets/js/calendar.js"></script>
-    <script src= "/assets/js/addAlcohol.js"> </script>
+    <script src="/assets/js/addAlcohol.js"> </script>
 
 
     <script>
-//  function redirect(){
-//     window.location.href = "/calendar";
-//  }
+        //  function redirect(){
+        //     window.location.href = "/calendar";
+        //  }
+        var userId = JSON.parse(localStorage.getItem("currentUser")).id;
+        // console.log(localStorage.getItem("currentUser"));
+        console.log("The User ID is: " + userId);
 
         var now = new Date();
         var year = now.getFullYear();
@@ -293,10 +292,9 @@
 
         // console.log(now);
 
-        var data = [{
-            date: now,
-            value: "Testing"
-        }];
+        var data = [];
+
+        // sequelize.
 
         // inline
         var datePicked;
@@ -376,15 +374,15 @@
             day.append(dot);
 
             var text = $("<div>");
-                text.attr("class", "calendar-label");
-                text.attr("id", String(i));
-                text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+            text.attr("class", "calendar-label");
+            text.attr("id", String(i));
+            text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
 
             var innerText = $("<p>");
-                innerText.append(dateFormatted + "<br>" + alcohol);
+            innerText.append(dateFormatted + "<br>" + alcohol);
 
-                text.append(innerText);
-                text.append("<i>");
+            text.append(innerText);
+            text.append("<i>");
 
             var textBody = $("body").append(text);
 
@@ -396,7 +394,7 @@
 
             i++;
             // console.log("date added...");
-            
+
         });
 
         $(".alcoholBtn").on("click", function (event) {

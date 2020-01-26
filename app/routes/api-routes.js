@@ -14,9 +14,9 @@ router.post("/api/signup", function(req, res) {
 
 });
 
-router.get("/api/signin/", function(req, res){
+// router.get("/api/signin/", function(req, res){
   
-})
+// })
 
 router.post("/api/signin/", function(req, res) {
   console.log("Checking DB for user....");
@@ -38,7 +38,7 @@ router.post("/api/signin/", function(req, res) {
 
 //Loggin alcohol count
 router.post("/api/alcoholuser/", function(req, res) {
-  console.log("Ading alcohol countr....");
+  console.log("Adding alcohol counter....");
   console.log(req);
   // console.log(req.params.username);
   db.Alcoholuser.create(req.body).then(data=>res.send(data))

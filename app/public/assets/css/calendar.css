@@ -12,7 +12,7 @@ body{
     width: 11%;
 }
 
-#logoutBtn{
+#logoutBtn, #save-data, #add-btn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
     font-weight: bold;
@@ -23,32 +23,59 @@ body{
     padding-bottom:5px;
 }
 
-#logoutBtn:hover{
+#logoutBtn:hover, #save-data:hover, #add-btn:hover{
     background: rgba(255, 0, 0, 0.454);
 }
-#logoutBtn:focus{
+#logoutBtn:focus , #save-data:focus, #add-btn:focus{
     outline:none !important;
     box-shadow: none !important;
     border:rgba(255, 0, 0);
 }
 
 .alcohol-img{
-    
     width: 40%;
 } 
 /* .alcoholBtn{
    background-color: #fff !important;
 } */
-.alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus{
-   background-color: red;
+.alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus, .alcoholBtn:target{
+   background-color: rgba(228, 22, 22, 0.386);
 }
 
-.box{
+.addCard{
+    border-radius: 0px;
+    width: 100%;
+}
 
+.inputs{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
+.inputs:focus, .inputs:active{
+    /* outline:none !important;
+    box-shadow: none !important;
+    border-color:black; */
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+.title{
+    font-weight: bold;
+}
+.box{
+    background-color: white;
     border: .5px solid black;
     text-align:center;
 }
 
+
+/* Calendar CSS */
 
 .calendar {
     text-align: center;
