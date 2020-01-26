@@ -1,7 +1,7 @@
    
     $(document).ready(function() {
         console.log("JSLOADED")
-   var currentUser =  JSON.parse(localStorage.getItem("currentUser"))
+   var currentUser =  JSON.parse(localStorage.getItem("currentUser"));
 var alcohol = $(".alcoholBtn");
 
 $('#userName').append(`<span id="userWelcome">Welcome To Buzz Buddy ${currentUser.name}!</span>`)
