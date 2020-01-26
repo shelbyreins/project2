@@ -19,6 +19,10 @@
             alert("All required inputs are not entered")
           return;
         }
+        if(age < 21){
+          alert("You must be 21 to use this site")
+          return;
+        }
         // else if(age.val() >= 21){
         //   alert("You must be 21 to use of site")
         // }
@@ -29,7 +33,7 @@
             age: age.val().trim(),
             password:password.val().trim(),
             //password: password.val().trim(),
-            gender: $("#gender").val().trim(),
+            gender: $("#gender").val(),
             weight: $("#weight").val().trim(),
             hasAlcohol: false,
         });

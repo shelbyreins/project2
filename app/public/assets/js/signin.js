@@ -6,34 +6,36 @@
 
       //Getting references for sign-in
 
-      var loginName= $("#login-email");
-      var loginPassword=$("#login-password");
+      // var loginName= $("#login-email");
+      // var loginPassword=$("#login-password");
       
       $(document).on("click", "#login-btn", handleUserFormSubmit);
      
       // Getting the initial list of Users
       
-      var name = $("#login-email").val();
-     
+      
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
         event.preventDefault();
+
+        var name = $("#login-email").val().trim();
+        var password = $("#login-password").val().trim();
+
         console.log('signing in user...')
-        console.log(name);
+        console.log("Name: " + name);
+        console.log("Password: " + password);
         // Don't do anything if the name fields hasn't been filled out
-        if (!loginName.val().trim()|| !loginPassword.val().trim()) {
+        if (!name || !password) {
 
             console.log("Input not correct");
-            // alert("All required inputs are not entered")
-
-             console.log("Input not correct");
+            alert("All required inputs are not entered");
 
           return;
         }
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({
-            username: $("#login-email").val().trim(),
-            password: $("#login-password").val().trim(),
+            "username": name,
+            "password": password,
         });
         
       }
@@ -41,15 +43,15 @@
 
       //A function for logging a user. 
       function upsertUser(userData) {
-        $.post("/api/signin", userData)
-        
-          .then(function(data){
-          console.log(data);
-            // displayLoginName(login_name);
-            localStorage.setItem("currentUser", JSON.stringify(data));
-            // redirect();
-      })
-      .catch(err=>console.log(err));   
+        console.log("upsertUser() function called");
+        $.post("/api/signin", userData, function(data) {
+
+          console.log("Data from POST request: " + data);
+          // displayLoginName(login_name);
+          localStorage.setItem("currentUser", JSON.stringify(data));
+          redirect();
+
+        }).catch(err=>console.log(err));   
       }
 
       function redirect(){
