@@ -11,7 +11,7 @@
       $(document).on("click", "#signUp-btn", handleUserFormSubmit);
      
       // Getting the initial list of Users
-      getUsers();
+      // getUsers();
     //Function to encrypt password
 // var pswdtoencryt=$("#password").val().trim();
 // hashedPassword = CryptoJS.SHA256(pswdtoencryt);
