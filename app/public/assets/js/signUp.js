@@ -9,13 +9,6 @@
       var password=$("#password");
       var displayName ;
       $(document).on("click", "#signUp-btn", handleUserFormSubmit);
-     
-      // Getting the initial list of Users
-      // getUsers();
-    //Function to encrypt password
-// var pswdtoencryt=$("#password").val().trim();
-// hashedPassword = CryptoJS.SHA256(pswdtoencryt);
-// console.log("Hashed Password",hashedPassword);
 
       // A function to handle what happens when the form is submitted to register a new User
       function handleUserFormSubmit(event) {
