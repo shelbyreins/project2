@@ -42,7 +42,7 @@ function getAlcohol(alcohol) {
 
         upsertUser({
             alcohol:alcohol,
-            count: $(".quantity").val().trim(),
+            count: $(".quantity").val(),
             price: $(".price").val(),
             UserId:userid,
             alcoholId:alcoholid,
