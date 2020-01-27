@@ -91,7 +91,10 @@
         </div>
         <div class="card-body">
 
-            </p>
+            <p>Drink: <span id="drink"></span></p>
+            <p>Quantity: <span id="drink_quantity"></span></p>
+            <p>Price: <span id="drink_price"></span></p>
+
 
         </div>
     </div>
@@ -339,6 +342,9 @@
                     console.log("Here is the date picked: " + datePicked);
                     localStorage.setItem("datePicked", datePicked);
                     $("#addBtn").show();
+                    $("#drink").empty();
+                    $("#drink_quantity").empty();
+                    $("#drink_price").empty();
                     fillCard();
                 },
                 viewChange: function (view, y, m) {

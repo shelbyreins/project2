@@ -19,7 +19,9 @@ function getAlcohol(alcohol) {
     $.post("/api/alcohol/", alcohol)
       .then(function(data){
         alcoholId = data.id;
+        alcoholType = data.alcoholType
         localStorage.setItem("alcoholid",alcoholId);
+        localStorage.setItem("alcoholType",alcoholType);
       })
       .catch(err=>console.log(err));
       
@@ -39,13 +41,26 @@ function getAlcohol(alcohol) {
         // Calling the upsertUserr function and passing in the value of the name input
         var userid = currentUser.id;
         var alcoholid = localStorage.getItem("alcoholid")
+        var date = localStorage.getItem("datePicked");
+        var dateFormatted = new Date(date).format("yyyy-mm-dd");
+        // console.log("Formatted date: " + dateFormatted);
+
+        dateFormatted = dateFormatted.split("-");
+        if (dateFormatted[1] < 10) {
+            dateFormatted[1] = "0" + dateFormatted[1];
+        }
+        if (dateFormatted[2] < 10) {
+            dateFormatted[2] = "0" + dateFormatted[2];
+        }
+        dateFormatted = new String(dateFormatted.join("-"));
 
         upsertUser({
             count: $("#quantity").val(),
             price: $("#price").val(),
             UserId:userid,
             alcoholId:alcoholid,
-            date: new Date(localStorage.getItem("datePicked")).format("yyyy-mm-dd")
+            date: dateFormatted,
+            alcoholType: localStorage.getItem("alcoholType")
         });
         
       }
