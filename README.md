@@ -13,7 +13,7 @@ https://polar-eyrie-33440.herokuapp.com/
 
 1. Clone GitHub Repository
 2. Using your terminal, navigate to the project2 folder and do an `npm install`
-3. Update `password` in config.json file and comment in seeds.sql
+3. Update `password` in config.json file
 4. Create database in MySQL
 
     cd project2/db
@@ -26,7 +26,7 @@ https://polar-eyrie-33440.herokuapp.com/
     mysql -u root -p
     source seeds.sql
 
-6. 
+
 
 
 

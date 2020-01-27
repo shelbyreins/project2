@@ -19,17 +19,11 @@ router.post("/api/signup", function(req, res) {
 // })
 
 router.post("/api/signin", function(req, res) {
-  // console.log("Checking DB for user....");
-  // console.log("Username: " + req.body.username);
-  // console.log(req.params.username);
   db.User.findOne({
     where: {username:req.body.username
       
     }
   }).then(data=>{
-    // console.log("Data.dataValues: " + JSON.stringify(data.dataValues));
-    // console.log("Encrypted password: " + JSON.stringify(SHA256(req.body.password).words));
-    // console.log("Data.dataValues.password: " + (data.dataValues.password));
     if(JSON.stringify(SHA256(req.body.password).words) === data.dataValues.password){
       res.json(data)
     }else{
@@ -73,10 +67,18 @@ router.get("/api/alcoholuser/:id/:date", function(req, res) {
     console.log("Here is api data: " + data);
     res.send(data);
   });
+  
 
 });
 
+router.get("/api/userlog/:id", function(req, res) {
 
+  db.Alcoholuser.findAll({
+    where: {
+      UserId: req.params.id
+    }
+  }).then(data=>res.send(data));
+});
 
 
 module.exports = router;

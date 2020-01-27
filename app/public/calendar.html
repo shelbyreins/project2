@@ -302,22 +302,24 @@
         var month = now.getMonth();
         var date = now.getDate();
 
-        // console.log(now);
-        // console.log("getFullYear(): " + year);
-        // console.log("getMonth(): " + month);
-        // console.log("getDate(): " + date);
-
-        // console.log(now);
+        
 
         var data = [];
 
-        // sequelize.query("SELECT * FROM Alcoholusers WHERE UserId = ?", [userId], function (err, res) {
-        //     console.log("Sequelize query working...");
-        //     console.log("Here is the response: " + res);
-        //     data.push()
-        // });
+        $.get("/api/userlog/" + userId, function(res) {
 
-        // sequelize.
+            var parseData = JSON.parse(JSON.stringify(res));
+            console.log("Parse Data: " + parseData);
+            for (var i = 0; i < parseData.length; i++) {
+                console.log("For loop executing " + i + " times.");
+                data.push({
+                    date: new Date(parseData[i].date),
+                    value: "testing"
+                });
+            }
+            console.log("Data array: " + data);
+        });
+        
 
         // inline
         var datePicked;
@@ -331,7 +333,7 @@
                 height: 450,
                 // startWeek: 0,
                 // selectedRang: [new Date(), null],
-                data: data,
+                data: JSON.stringify(data),
                 monthArray: monthArray,
                 date: new Date(year, month, date),
                 onSelected: function (view, date, data) {

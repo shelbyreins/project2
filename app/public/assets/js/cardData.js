@@ -18,7 +18,7 @@ function fillCard() {
     $.get("/api/alcoholuser/" + userId + "/" + dateFormatted, function(data) {
         console.log("cardData: " + JSON.stringify(data));
         var cardData = JSON.parse(JSON.stringify(data));
-        console.log(cardData[0].alcoholType);
+        // console.log(cardData[0].alcoholType);
         
 
         $("#drink").text(cardData[0].alcoholType);
