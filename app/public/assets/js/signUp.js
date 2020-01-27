@@ -1,5 +1,3 @@
-//  import CryptoJS from 'crypto-js';
-
 $(document).ready(function () {
 
   console.log("JSLOADED")
@@ -20,6 +18,7 @@ $(document).ready(function () {
     // Don't do anything if the name fields hasn't been filled out
     if (!username.val().trim() || !password.val().trim() || !age.val().trim() || !name.val().trim() || !gender.val() || !weight.val()) {
       alert("All required inputs are not entered")
+
     } else if (age.val() < 21) {
       alert("You must be 21+ to use Buzz Buddy")
       return;
@@ -31,7 +30,6 @@ $(document).ready(function () {
       username: username.val().trim(),
       age: age.val().trim(),
       password: password.val().trim(),
-      //password: password.val().trim(),
       gender: $("#gender").val(),
       weight: $("#weight").val().trim(),
       hasAlcohol: false,

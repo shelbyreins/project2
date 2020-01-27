@@ -12,57 +12,29 @@
         factory(root.jQuery);
     }
 }(this, function ($) {
-
     // default config
-
     var defaults = {
-
         width: 280,
-
         height: 280,
-
         zIndex: 1,
-
-        // selector
         trigger: null,
-
-        // trigger
         offset: [0, 1],
-
         customClass: '',
-
-        // date, month
         view: 'date',
-
         date: new Date(),
         format: 'mm/dd/yyyy',
-
         startWeek: 0,
-
         weekArray: ['S', 'M', 'T', 'W', 'TH', 'F', 'S'],
-
         monthArray: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-
-        // [new Date(), null] or ['2015/11/23']
         selectedRang: null,
-
-        // [{ date: string, value: object }, ... ]
-        // format
-        // [ {date: '2015/11/23', value: '面试'} ]
         data: null,
-
-        // {m}，{d}，{v}value
-        // false
         label: '{d}\n{v}',
-
         prev: '&lt;',
         next: '&gt;',
-
         // view, y, m
         viewChange: $.noop,
 
         onSelected: function (view, date, value) {
-            // body...
         },
 
         onMouseenter: $.noop,
@@ -71,7 +43,6 @@
     },
 
         // static variable
-
         ACTION_NAMESPACE = 'data-calendar-',
 
         DISPLAY_VD = '[' + ACTION_NAMESPACE + 'display-date]',
@@ -587,7 +558,7 @@
             var arr = this.$disDate.html().split('/'),
                 y = Number(arr[0]),
                 m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
-                console.log("m: " + m);
+            console.log("m: " + m);
 
             return [y, m];
         },

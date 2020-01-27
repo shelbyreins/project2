@@ -70,20 +70,11 @@
     <div class="mt-3 mb-2 mx-auto" id="one">
     </div>
 
-    <!-- <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
-        <div class="card-body">
-            <div id="alcoholAdded"></div>
-            <button type="button" id="add-btn" class="btn btn-primary mx-auto" data-toggle="modal"
-                data-target="#exampleModal">
-                Add
-            </button>
-        </div>
-    </div> -->
     <br>
 
     <div class="card mt-1 mx-auto" id="addBtn" style="width: 500px; display: none;">
         <div id="alcoholAdded"></div>
-        <div class="card-header" style="background-color:white";>
+        <div class="card-header" style="background-color:white">
             <button type="button" id="add-btn" class="btn btn-primary mx-auto" data-toggle="modal"
                 data-target="#exampleModal">
                 Add
@@ -94,7 +85,6 @@
             <p>Drink: <span id="drink"></span></p>
             <p>Quantity: <span id="drink_quantity"></span></p>
             <p>Price: <span id="drink_price"></span></p>
-
 
         </div>
     </div>
@@ -290,11 +280,7 @@
     <script src="/assets/js/cardData.js"> </script>
 
     <script>
-        //  function redirect(){
-        //     window.location.href = "/calendar";
-        //  }
         var userId = JSON.parse(localStorage.getItem("currentUser")).id;
-        // console.log(localStorage.getItem("currentUser"));
         console.log("The User ID is: " + userId);
 
         var now = new Date();
@@ -302,7 +288,7 @@
         var month = now.getMonth();
         var date = now.getDate();
 
-        
+
 
         var data = [];
 
@@ -322,7 +308,7 @@
         //     }
         //     console.log("Data array: " + JSON.stringify(data));
         // });
-        
+
 
         // inline
         var datePicked;
@@ -331,11 +317,8 @@
         function loadCalendar() {
 
             var $ca = $('#one').calendar({
-                // view: 'month',
                 width: 500,
                 height: 450,
-                // startWeek: 0,
-                // selectedRang: [new Date(), null],
                 data: data,
                 monthArray: monthArray,
                 date: new Date(year, month, date),
@@ -362,7 +345,6 @@
         // picker
         $('#two').calendar({
             trigger: '#dt',
-            // offset: [0, 1],
             zIndex: 999,
             data: data,
             onSelected: function (view, date, data) {
@@ -385,20 +367,10 @@
 
             console.log("Modal button working...");
             console.log("datePicked: " + datePicked);
-
             console.log("Before: " + JSON.stringify(data));
-            // data.push({ date: new Date(datePicked), value: alcohol });
-
-            // console.log(data[1].date);
             console.log("After:" + JSON.stringify(data));
 
-            // var cal = new Calendar();
-
-            // $("#one").calendar(cal.setDate(new Date(datePicked)), alcohol);
-            // $("#one").load(location.href + " #one>*", "");
             loadCalendar();
-
-            // console.log("Date formatted: " + datePicked.toLocaleDateString("en-US"));
 
             var dateFormatted = datePicked.toLocaleDateString("en-US");
             //Creating a dot
@@ -420,15 +392,7 @@
 
             var textBody = $("body").append(text);
 
-            // day.hover(function(){
-            //     $("#" + i).css("display", "block");
-            // });
-
-            // day.addEventListener("mouseover", showText("#" + String(i)));
-
             i++;
-            // console.log("date added...");
-
         });
 
         $(".alcoholBtn").on("click", function (event) {
@@ -443,10 +407,6 @@
             loadCalendar();
         });
 
-
-        // function showText(id) {
-        //     $(id).css("display", "block");
-        // }
     </script>
 
 

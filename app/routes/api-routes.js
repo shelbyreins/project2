@@ -5,69 +5,62 @@ var SHA256 = require('crypto-js/sha256');
 var crypto = require('crypto-js')
 var router = express.Router();
 
-
 //to insert a new user into the db
-router.post("/api/signup", function(req, res) {
+router.post("/api/signup", function (req, res) {
   req.body.password = JSON.stringify(SHA256(req.body.password).words);
   // console.log(req.body)
-  db.User.create(req.body).then(data=>res.send(data))
+  db.User.create(req.body).then(data => res.send(data))
 
 });
 
-// router.get("/api/signin", function(req, res){
-//   console.log("GET request to /api/signin is called");
-// })
 
-router.post("/api/signin", function(req, res) {
+router.post("/api/signin", function (req, res) {
   db.User.findOne({
-    where: {username:req.body.username
-      
+    where: {
+      username: req.body.username
+
     }
-  }).then(data=>{
-    if(JSON.stringify(SHA256(req.body.password).words) === data.dataValues.password){
+  }).then(data => {
+    if (JSON.stringify(SHA256(req.body.password).words) === data.dataValues.password) {
       res.json(data)
-    }else{
+    } else {
       res.send(null)
     }
   });
 });
 
 //Loggin alcohol count
-router.post("/api/alcoholuser/", function(req, res) {
+router.post("/api/alcoholuser/", function (req, res) {
   console.log("Adding alcohol counter....");
-  // console.log(req);
-  // console.log(req.params.username);
-  db.Alcoholuser.create(req.body).then(data=>res.send(data))
+  db.Alcoholuser.create(req.body).then(data => res.send(data))
 });
 
 //Querying to populate aclohol count on to card
-
 router.get("/api/alcoholuser/:id")
 
-
 //Querying Alcohol table
-router.post("/api/alcohol/", function(req,res){
+router.post("/api/alcohol/", function (req, res) {
   console.log("checking for alcohol id.....")
   db.Alcohol.findOne({
-    where:{
+    where: {
       alcoholType: req.body.alcohol
     }
-  }).then(data=>res.send(data)
+  }).then(data => res.send(data)
   );
 })
-router.get("/api/alcoholuser/:id/:date", function(req, res) {
+router.get("/api/alcoholuser/:id/:date", function (req, res) {
   console.log("Querying for card display.....");
   console.log("req.params.date" + req.params.date);
   db.Alcoholuser.findAll({
-    where:{
+    where: {
       UserId: req.params.id,
       date: req.params.date
     }
-  }).then(data=>{
+  }).then(data => {
     console.log("Here is api data: " + data);
     res.send(data);
   });
-  
+
 
 });
 
@@ -79,6 +72,5 @@ router.get("/api/alcoholuser/:id/:date", function(req, res) {
 //     }
 //   }).then(data=>res.send(data));
 // });
-
 
 module.exports = router;
