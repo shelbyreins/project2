@@ -61,7 +61,15 @@ router.post("/api/alcohol/", function(req,res){
   }).then(data=>res.send(data)
   );
 })
-router.put("/api/log/:id", function(req, res) {
+router.get("/api/alcoholuser/:id/:date", function(req, res) {
+  console.log("Querying for card display.....");
+  console.log(req);
+  db.Alcoholuser.findAll({
+    where:{
+      id: req.params.id,
+      date:req.params.date
+    }
+  }).then(data=>res.send(data));
 
 });
 

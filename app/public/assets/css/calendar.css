@@ -12,6 +12,12 @@ body{
     width: 11%;
 }
 
+
+#add-btn{
+    width:100%;
+    height:auto;
+}
+
 #logoutBtn, #save-data, #add-btn{
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);

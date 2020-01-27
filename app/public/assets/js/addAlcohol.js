@@ -45,6 +45,7 @@ function getAlcohol(alcohol) {
             price: $("#price").val(),
             UserId:userid,
             alcoholId:alcoholid,
+            date: new Date(localStorage.getItem("datePicked")).format("yyyy-mm-dd")
         });
         
       }
