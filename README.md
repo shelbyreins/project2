@@ -53,13 +53,13 @@ Finally,a user logs out the local Storage is cleared.
         localStorage.clear();
 
 
-#### CryptoJS
+### CryptoJS
 
 CryptoJS provides other progressive hashing and ciphers to improve the security. The hashing is irreverible and uses the algorithm SHA256.
 
 <img src="app/public/assets/images/cryptoJs.png" width="400px">
 
-<img src="app/public/assets/images/cryptoJs2.png" width="400px">
+<img src="app/public/assets/images/cryptoJS2.png" width="400px">
 
 
 
