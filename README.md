@@ -7,6 +7,5 @@ https://polar-eyrie-33440.herokuapp.com/
 
 ## Description
 
- Buzz Buddy is an application that tracks users daily alcohol intake. Each user has a personal account. The users profile consists of a calendar in which they will select a date to add in alcohol.  The alcohol, along with quantity and price is selected from a modal and 
- then pushed into a card for that date. 
+ Buzz Buddy is an application that tracks users daily alcohol intake. Each user has a personal account. The users profile consists of a calendar in which they will select a date to add in alcohol.  The alcohol, along with quantity and price is selected from a modal and then pushed into a card for that date. 
 
