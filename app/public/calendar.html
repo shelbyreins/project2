@@ -306,20 +306,22 @@
 
         var data = [];
 
-        $.get("/api/userlog/" + userId, function(res) {
+        // $.get("/api/userlog/" + userId, function(res) {
 
-            var parseData = JSON.parse(JSON.stringify(res));
-            console.log("Parse Data: " + parseData);
-            console.log("Parse Data date: " + JSON.stringify(parseData[0].date));
-            for (var i = 0; i < parseData.length; i++) {
-                console.log("For loop executing " + i + " times.");
-                data.push({
-                    date: JSON.stringify(parseData[i].date),
-                    value: "testing"
-                });
-            }
-            console.log("Data array: " + JSON.stringify(data));
-        });
+        //     var parseData = JSON.parse(JSON.stringify(res));
+        //     console.log("Parse Data: " + parseData);
+        //     console.log("Parse Data date: " + JSON.stringify(parseData[0].date));
+        //     var newDate = JSON.stringify(parseData[0].date)
+        //     console.log("New Date: " + newDate);
+        //     for (var i = 0; i < parseData.length; i++) {
+        //         console.log("For loop executing " + i + " times.");
+        //         data.push({
+        //             date: newDate,
+        //             value: "testing"
+        //         });
+        //     }
+        //     console.log("Data array: " + JSON.stringify(data));
+        // });
         
 
         // inline
