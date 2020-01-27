@@ -8,7 +8,6 @@ var router = express.Router();
 //to insert a new user into the db
 router.post("/api/signup", function (req, res) {
   req.body.password = JSON.stringify(SHA256(req.body.password).words);
-  // console.log(req.body)
   db.User.create(req.body).then(data => res.send(data))
 
 });
@@ -18,7 +17,6 @@ router.post("/api/signin", function (req, res) {
   db.User.findOne({
     where: {
       username: req.body.username
-
     }
   }).then(data => {
     if (JSON.stringify(SHA256(req.body.password).words) === data.dataValues.password) {
