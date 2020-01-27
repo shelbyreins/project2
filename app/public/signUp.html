@@ -39,19 +39,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput3" class="label-form" required>Username<span
+                            <label for="exampleFormControlInput3" class="label-form" >Username<span
                                     class="required">*<span></label>
                             <input type="input" class="form-control inputs" id="userName">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput4" class="label-form" required>Password<span
+                            <label for="exampleFormControlInput4" class="label-form" >Password<span
                                     class="required">*<span></label>
                             <input type="password" class="form-control inputs" id="password">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput6" class="label-form" required>Age<span
+                            <label for="exampleFormControlInput6" class="label-form" >Age<span
                                     class="required">*<span></label>
                             <input type="integer" class="form-control inputs" id="age">
                         </div>
@@ -97,6 +97,14 @@
         crossorigin="anonymous"></script>
 
     <script src="/assets/js/signUp.js"></script>
+
+    <script>
+
+            if(document.getElementById("age") < 21 ){
+                alert("You must be 21 to use Buzz Buddy")
+            }
+            
+        </script>
 
 </body>
 

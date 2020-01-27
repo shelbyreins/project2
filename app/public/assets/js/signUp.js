@@ -7,6 +7,9 @@
       var age = $("#age");
       var username=$("#userName");
       var password=$("#password");
+      var name =$("#name");
+      var gender =$("#gender");
+      var weight = $("#weight");
       var displayName ;
       $(document).on("click", "#signUp-btn", handleUserFormSubmit);
      
@@ -22,13 +25,14 @@
         event.preventDefault();
         console.log('registering user...')
         // Don't do anything if the name fields hasn't been filled out
-        if (!username.val().trim()|| !password.val().trim()||!age.val().trim()) {
-            alert("All required inputs are not entered")
+        if (!username.val().trim()|| !password.val().trim()||!age.val().trim() || !name.val().trim()|| !gender.val() ||!weight.val() ) {
+          alert("All required inputs are not entered")
+        } else if (age.val() < 21){
+          alert("Please work")
+        
           return;
-        }
-        // else if(age.val() >= 21){
-        //   alert("You must be 21 to use of site")
-        // }
+        } 
+
         // Calling the upsertUserr function and passing in the value of the name input
         upsertUser({
             name: $("#name").val().trim(),

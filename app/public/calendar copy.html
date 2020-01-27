@@ -68,36 +68,51 @@
     </nav>
 
 
-    <div class="mt-3 mb-2 mx-auto" id="one">
+    <div class="container-fluid">
+        <div class="row  justify-content-center">
+            <div class="col-sm-3">
+                <div class="mt-5 mx-auto" id="one">
+                </div>
+            </div>
         </div>
-    
-    
-    
-        <!-- <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
-            <div class="card-body">
-                <div id="alcoholAdded"></div>
+    </div>
+    <br>
+
+    <!-- <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-1">
+                <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
+                    <div class="card-body">
+                        <div id="alcoholAdded"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
                 <button type="button" id="add-btn" class="btn btn-primary mx-auto" data-toggle="modal"
                     data-target="#exampleModal">
                     Add
                 </button>
             </div>
-        </div> -->
-        <br>
-    
-        <div class="card mt-2 mx-auto" id="addBtn" style="width: 500px; display: none;">
-            <div id="alcoholAdded"></div>
-            <div class="card-header" style="background-color:white";>
-                <button type="button" id="add-btn" class="btn btn-primary mx-auto" data-toggle="modal"
-                    data-target="#exampleModal">
-                    Add
-                </button>
-            </div>
-            <div class="card-body">
-    
-                </p>
-    
-            </div>
         </div>
+    </div> -->
+
+    <form class="form-inline mx-auto">
+            <button type="submit" id="add-btn" class="btn btn-primary " data-toggle="modal"
+            data-target="#exampleModal">Add</button>
+            <br>
+
+        <div class="form-group mx-sm-3 ">
+            <div class="card mt-5 mx-auto" id="addBtn" style="width: 18rem; display: none;">
+                <div class="card-body">
+                    <div id="alcoholAdded"></div>
+
+                </div>
+            </div>
+            
+        </div>
+        
+    </form>
 
 
 
@@ -320,7 +335,8 @@
         // console.log(now);
 
         var data = [{
-           
+            date: now,
+            value: "Testing"
         }];
 
         // inline
