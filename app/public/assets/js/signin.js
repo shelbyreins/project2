@@ -48,8 +48,14 @@
 
           console.log("Data from POST request: " + data);
           // displayLoginName(login_name);
-          localStorage.setItem("currentUser", JSON.stringify(data));
-          redirect();
+          if(!data){
+            console.log("if statement working...");
+            alert("Incorrect Password");
+          } else {
+
+            localStorage.setItem("currentUser", JSON.stringify(data));
+            redirect();
+          }
 
         }).catch(err=>console.log(err));   
       }

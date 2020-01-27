@@ -310,14 +310,15 @@
 
             var parseData = JSON.parse(JSON.stringify(res));
             console.log("Parse Data: " + parseData);
+            console.log("Parse Data date: " + JSON.stringify(parseData[0].date));
             for (var i = 0; i < parseData.length; i++) {
                 console.log("For loop executing " + i + " times.");
                 data.push({
-                    date: new Date(parseData[i].date),
+                    date: JSON.stringify(parseData[i].date),
                     value: "testing"
                 });
             }
-            console.log("Data array: " + data);
+            console.log("Data array: " + JSON.stringify(data));
         });
         
 
@@ -333,7 +334,7 @@
                 height: 450,
                 // startWeek: 0,
                 // selectedRang: [new Date(), null],
-                data: JSON.stringify(data),
+                data: data,
                 monthArray: monthArray,
                 date: new Date(year, month, date),
                 onSelected: function (view, date, data) {
