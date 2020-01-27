@@ -71,14 +71,14 @@ router.get("/api/alcoholuser/:id/:date", function(req, res) {
 
 });
 
-router.get("/api/userlog/:id", function(req, res) {
+// router.get("/api/userlog/:id", function(req, res) {
 
-  db.Alcoholuser.findAll({
-    where: {
-      UserId: req.params.id
-    }
-  }).then(data=>res.send(data));
-});
+//   db.Alcoholuser.findAll({
+//     where: {
+//       UserId: req.params.id
+//     }
+//   }).then(data=>res.send(data));
+// });
 
 
 module.exports = router;
