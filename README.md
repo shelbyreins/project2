@@ -1,6 +1,6 @@
 # Buzz Buddy 
 
-<img src="app/public/assets/images/logo1.png">
+<img src="app/public/assets/images/logo1.png" width="400px">
 
 
 https://polar-eyrie-33440.herokuapp.com/
@@ -16,15 +16,53 @@ https://polar-eyrie-33440.herokuapp.com/
 3. Update `password` in config.json file
 4. Create database in MySQL
 
-    cd project2/db
-    mysql -u root -p
-    source schema.sql
+        cd project2/db
+        mysql -u root -p
+        source schema.sql
 
 5. Populate table in MySQL
 
-    cd project2/db
-    mysql -u root -p
-    source seeds.sql
+        cd project2/db
+        mysql -u root -p
+        source seeds.sql
+
+## Live Demo
+
+<img src="app/public/assets/images/demo.gif" width="600px">
+
+
+## Features
+
+### Local Storage
+
+Allows for the key-value pair to be saved in the web browser. These can then be accessed at any time unless intentionally deleted. 
+
+First, storing the user data object  and alcohol object and accessing the userId, alcoholId and alcoholType to insert data into the alcoholUsers table (join table).
+
+        localStorage.setItem("currentUser", JSON.stringify(data));
+        localStorage.setItem("alcoholid",alcoholId;
+
+
+The, accessing the username to display the username
+on successful sign in.
+
+        var alcoholid = localStorage.getItem("alcoholid")
+
+Finally,a user logs out the local Storage is cleared.
+
+        localStorage.clear();
+
+
+#### CryptoJS
+
+CryptoJS provides other progressive hashing and ciphers to improve the security. The hashing is irreverible and uses the algorithm SHA256.
+
+<img src="app/public/assets/images/cryptoJs.png" width="400px">
+
+<img src="app/public/assets/images/cryptoJs2.png" width="400px">
+
+
+
 
 
 
@@ -57,3 +95,9 @@ https://polar-eyrie-33440.herokuapp.com/
 * CSS
 * Git
 
+
+### Contributors
+ - Links to our Githubs
+    - [Chris Hayashi](https://github.com/Chris-Hayashi)
+    - [Dimple Shanbhag](https://github.com/dimz13)
+    - [Shelby Reinsimar](https://github.com/shelbyreins)
