@@ -1,6 +1,6 @@
 # Buzz Buddy 
 
-<img src="app/public/assets/images/logo1.png" width="400px">
+<img src="app/public/assets/images/logo1.png" width="200px">
 
 
 https://polar-eyrie-33440.herokuapp.com/
