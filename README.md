@@ -62,7 +62,9 @@ CryptoJS provides other progressive hashing and ciphers to improve the security.
 <img src="app/public/assets/images/cryptoJS2.png" width="400px">
 
 
+### Calendar Library
 
+The library used was the Pretty Event Calendar and Datepicker for jQuery plugin. This calendar allows an easy-to-use UI to pick a day and add an event. The user can easily flip through the months by clicking the arrow in the upper right-hand corner. When the user clicks a day that already has an event, the data of that event will be retrieved. In this application, each event added will refer to the drink, quantity, and price inputted by the user.
 
 
 
