@@ -1,18 +1,27 @@
-# Buzz Buddy 
+# <img src="app/public/assets/images/logo1.png" width="50px"> Buzz Buddy 
 
-<img src="app/public/assets/images/logo1.png" width="200px">
+
 
 
 https://polar-eyrie-33440.herokuapp.com/
 
-## Description
+**Default login**
+
+username: `demo`
+password: `asd`
+
+## **Description**
 
  Buzz Buddy is an application that tracks users daily alcohol intake. Each user has a personal account. The users profile consists of a calendar in which they will select a date to add in alcohol.  The alcohol, along with quantity and price is selected from a modal and then pushed into a card for that date. 
 
-## Installation
+## **Installation**
 
 1. Clone GitHub Repository
-2. Using your terminal, navigate to the project2 folder and do an `npm install`
+2. Install node packages
+
+        cd project2
+        npm install
+        
 3. Update `password` in config.json file
 4. Create database in MySQL
 
@@ -26,12 +35,16 @@ https://polar-eyrie-33440.herokuapp.com/
         mysql -u root -p
         source seeds.sql
 
-## Live Demo
+## **Live Demo**
+
 
 <img src="app/public/assets/images/demo.gif" width="600px">
 
 
-## Features
+
+
+
+## **Features**
 
 ### Local Storage
 
@@ -66,40 +79,37 @@ CryptoJS provides other progressive hashing and ciphers to improve the security.
 
 The library used was the Pretty Event Calendar and Datepicker for jQuery plugin. This calendar allows an easy-to-use UI to pick a day and add an event. The user can easily flip through the months by clicking the arrow in the upper right-hand corner. When the user clicks a day that already has an event, the data of that event will be retrieved. In this application, each event added will refer to the drink, quantity, and price inputted by the user.
 
+<img src="app/public/assets/images/calendarJS.gif" width="300px" height="200px"> <img src="app/public/assets/images/calendarJS2.gif" width="300px" height="200px">
 
 
+## **Technolgies Used**
 
-
-
-
-
-
-
-
-
-
-
-
-## Technolgies Used
-
- * Node Package Managers (NPM)
-    * express
-    * sequelize
-    * body-parser
-    * cryto-js
-    * path
-    * mysql
-    * mysql12
-    * dotenv
 * Bootstrap
 * CalendarJS Library
 * HTML
 * CSS
 * Git
+* Node Package Managers (NPM)
+    * express 
+    * body-parser 
+    * path
+    * mysql
+    * sequelize
+    * mysql12
+    * cryto-js
+    * dotenv
+
+## **Future Development**
+
+* Add a section for limit of alcohol per day 
+* Calculate BAC
+* Add data chart(s)
+* How long it would take to sober up
 
 
-### Contributors
+## **Contributors**
  - Links to our Githubs
     - [Chris Hayashi](https://github.com/Chris-Hayashi)
     - [Dimple Shanbhag](https://github.com/dimz13)
     - [Shelby Reinsimar](https://github.com/shelbyreins)
+
