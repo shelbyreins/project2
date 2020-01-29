@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-   
-    // $(document).ready(function() {
-        console.log("JSLOADED")
-   var currentUser =  JSON.parse(localStorage.getItem("currentUser"))
-var alcohol = $(".alcoholBtn");
-=======
 $(document).ready(function () {
   console.log("JSLOADED")
   var currentUser = JSON.parse(localStorage.getItem("currentUser"));
   var alcohol = $(".alcoholBtn");
->>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 
   $('#userName').append(`<span id="userWelcome">Welcome To Buzz Buddy ${currentUser.name}!</span>`)
 
@@ -33,7 +25,6 @@ $(document).ready(function () {
       .catch(err => console.log(err));
   }
 
-<<<<<<< HEAD
         upsertUser({
             alcohol:alcohol,
             count: $(".quantity").val(),
@@ -53,7 +44,6 @@ $(document).ready(function () {
           
           // redirect();
       }
-=======
   $(document).on("click", "#save-data", handleUserFormSubmit);
 
   // A function to handle what happens when the form is submitted to register a new User
@@ -66,7 +56,6 @@ $(document).ready(function () {
     var alcoholid = localStorage.getItem("alcoholid")
     var date = localStorage.getItem("datePicked");
     var dateFormatted = new Date(date).format("yyyy-mm-dd");
->>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 
     dateFormatted = dateFormatted.split("-");
     if (dateFormatted[1] < 10) {
@@ -77,14 +66,6 @@ $(document).ready(function () {
     }
     dateFormatted = new String(dateFormatted.join("-"));
 
-<<<<<<< HEAD
-      function home(){
-        window.location.href = "/"
-        localStorage.clear()
-      }
-    // });
-    
-=======
     upsertUser({
       count: $("#quantity").val(),
       price: $("#price").val(),
@@ -114,4 +95,3 @@ $(document).ready(function () {
     localStorage.clear()
   }
 });
->>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941

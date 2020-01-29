@@ -13,9 +13,6 @@ CREATE DATABASE user_db;
 -- 	PRIMARY KEY (id)
 -- );
 
-<<<<<<< HEAD
-
-=======
 -- CREATE TABLE alcohol
 -- (
 -- 	id int NOT NULL AUTO_INCREMENT,
@@ -23,4 +20,3 @@ CREATE DATABASE user_db;
 -- 	alcoholContent varchar(100) NOT NULL,
 -- 	PRIMARY KEY (id)	
 -- );
->>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
