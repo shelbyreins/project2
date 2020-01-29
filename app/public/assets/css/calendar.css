@@ -17,9 +17,13 @@ body{
     width: 11%;
 }
 
+<<<<<<< HEAD
 #addbtn{
     width:100%;
 }
+=======
+
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 #add-btn{
     width:100%;
     height:auto;
@@ -39,19 +43,28 @@ body{
 #logoutBtn:hover, #save-data:hover, #add-btn:hover{
     background: rgba(255, 0, 0, 0.454);
 }
+<<<<<<< HEAD
 #logoutBtn:focus, #save-data:focus, #add-btn:focus{
+=======
+#logoutBtn:focus , #save-data:focus, #add-btn:focus{
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
     outline:none !important;
     box-shadow: none !important;
     border:rgba(255, 0, 0);
 }
 
 .alcohol-img{
+<<<<<<< HEAD
     /* background-color: white; */
     width: 50%;
     
+=======
+    width: 40%;
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 } 
 .alcoholBtn{
    background-color: #fff !important;
+<<<<<<< HEAD
 }
 .alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus{
    background-color: red;
@@ -82,6 +95,36 @@ body{
     border-radius: 0px;
 }
 
+=======
+} */
+.alcoholBtn:hover, .alcoholBtn:active, .alcoholBtn:focus, .alcoholBtn:target{
+   background-color: rgba(228, 22, 22, 0.386);
+}
+
+/* .addCard{
+    border-radius: 0px;
+    width: 100%;
+} */
+
+.inputs{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
+.inputs:focus, .inputs:active{
+    /* outline:none !important;
+    box-shadow: none !important;
+    border-color:black; */
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
+}
+
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 .title{
     font-weight: bold;
 }
@@ -100,6 +143,11 @@ body{
     font-size: 2em;
     font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+
+/* Calendar CSS */
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
 
 /* Calendar CSS */
 .calendar {

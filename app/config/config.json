@@ -1,4 +1,5 @@
-{
+ 
+ {
   "development": {
     "username": "root",
     "password": "password",
@@ -15,9 +16,11 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "password",
+    "database": "user_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
+
 }
+

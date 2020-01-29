@@ -17,6 +17,14 @@ module.exports = function(sequelize, DataTypes) {
         
         alcoholId: {
             type: DataTypes.INTEGER
+        },
+
+        alcoholType: {
+            type: DataTypes.STRING
+        },
+
+        date: {
+            type: DataTypes.STRING
         }
     });
 

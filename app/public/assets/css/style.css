@@ -10,6 +10,7 @@ body{
     margin-top:0; 
 } 
 
+<<<<<<< HEAD
 #logoImg{
     width: 11%;
 }
@@ -21,6 +22,9 @@ body{
     border-radius: 0px !important;
 }
  #login-btn, #signUp-btn-nav, #submit-btn{
+=======
+ #login-btn, #signUp-btn-nav, #signIn-btn{
+>>>>>>> 9863b32e3d93b8cd588118bee992bf8a69460941
     background: rgba(255, 0, 0);
     border:rgba(255, 0, 0);
     font-weight: bold;
@@ -31,19 +35,25 @@ body{
     padding-bottom:5px;
  }
 
- #login-btn{
+ #signIn-btn{
      margin-right:10px;
  }
 
- #login-btn:hover, #signUp-btn-nav:hover, #submit-btn:hover{
+ #login-btn:hover, #signUp-btn-nav:hover, #signIn-btn:hover{
     background: rgba(255, 0, 0, 0.454);
 }
-#login-btn:focus, #signUp-btn-nav:focus, #submit-btn:focus{
+#login-btn:focus, #signUp-btn-nav:focus, #signIn-btn:focus{
     outline:none !important;
     box-shadow: none !important;
     border:rgba(255, 0, 0);
 }
 
+#login-email, #login-password{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
 
 #login-email:focus, #login-password:focus, #login-email:active, #login-password:active{
     outline:none !important;
