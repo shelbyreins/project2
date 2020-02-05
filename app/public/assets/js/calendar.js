@@ -558,7 +558,6 @@
             var arr = this.$disDate.html().split('/'),
                 y = Number(arr[0]),
                 m = Number(defaults.monthArray.indexOf(arr[1].split(">")[1].split("<")[0]) + 1);
-            console.log("m: " + m);
 
             return [y, m];
         },

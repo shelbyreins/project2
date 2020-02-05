@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  console.log("JSLOADED")
+  // console.log("JSLOADED")
   //   // Getting references to the name,password and username, 
   var age = $("#age");
   var username = $("#userName");
@@ -14,7 +14,6 @@ $(document).ready(function () {
   // A function to handle what happens when the form is submitted to register a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    console.log('registering user...')
     // Don't do anything if the name fields hasn't been filled out
     if (!username.val().trim() || !password.val().trim() || !age.val().trim() || !name.val().trim() || !gender.val() || !weight.val()) {
       alert("All required inputs are not entered")
@@ -40,7 +39,6 @@ $(document).ready(function () {
   function upsertUser(userData) {
     $.post("/api/signup", userData)
       .then(function (data) {
-        console.log(data);
         displayName = data.name
         localStorage.setItem("currentUser", JSON.stringify(data))
         redirect();
@@ -49,7 +47,7 @@ $(document).ready(function () {
   }
 
   function redirect() {
-    alert("Welcome to Buzzbuddy," + displayName);
+    alert("Welcome to Buzzbuddy, " + displayName);
     window.location.href = "/calendar";
   }
 

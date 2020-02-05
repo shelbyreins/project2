@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log("JSLOADED")
+  // console.log("JSLOADED")
 
   $(document).on("click", "#login-btn", handleUserFormSubmit);
 
@@ -10,12 +10,8 @@ $(document).ready(function () {
     var name = $("#login-email").val().trim();
     var password = $("#login-password").val().trim();
 
-    console.log('signing in user...')
-    console.log("Name: " + name);
-    console.log("Password: " + password);
     // Don't do anything if the name fields hasn't been filled out
     if (!name || !password) {
-      console.log("Input not correct");
       alert("All required inputs are not entered");
       return;
     }
@@ -29,11 +25,8 @@ $(document).ready(function () {
 
   //A function for logging a user. 
   function upsertUser(userData) {
-    console.log("upsertUser() function called");
     $.post("/api/signin", userData, function (data) {
-      console.log("Data from POST request: " + data);
       if (!data) {
-        console.log("if statement working...");
         alert("Incorrect Password");
       } else {
         localStorage.setItem("currentUser", JSON.stringify(data));
@@ -52,14 +45,6 @@ $(document).ready(function () {
     window.location.href = "/home"
     localStorage.clear();
   }
-  // function displayLoginName(name){
-  //   console.log("User Name to print: ", name);
-  //   var divId = document.getElementById("namel");
-  //   var newName = $("<h2>");
-  //   newName.addClass("name-display");
-  //   newName.text(name);
-  //   divId.append(newName);
-  //   console.log(newName);
-  // }
+
 
 });

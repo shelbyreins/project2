@@ -19,5 +19,4 @@ router.get("/alcohol", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/addAlcohol.html"));
 });
 
-
 module.exports = router;
