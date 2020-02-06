@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  console.log("JSLOADED")
+  // console.log("JSLOADED")
   var currentUser = JSON.parse(localStorage.getItem("currentUser"));
   var alcohol = $(".alcoholBtn");
 
-  $('#userName').append(`<span id="userWelcome">Welcome To Buzz Buddy ${currentUser.name}!</span>`)
+  $('#userName').append(`<span id="userWelcome">Welcome To Buzz Buddy, ${currentUser.name}!</span>`)
 
   $(".alcoholBtn").on("click", function (event) {
     event.preventDefault();
@@ -30,7 +30,6 @@ $(document).ready(function () {
   // A function to handle what happens when the form is submitted to register a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    console.log('adding alcohol count...')
     // Don't do anything if the name fields hasn't been filled out
     // Calling the upsertUserr function and passing in the value of the name input
     var userid = currentUser.id;
