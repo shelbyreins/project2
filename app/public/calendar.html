@@ -281,34 +281,13 @@
 
     <script>
         var userId = JSON.parse(localStorage.getItem("currentUser")).id;
-        console.log("The User ID is: " + userId);
 
         var now = new Date();
         var year = now.getFullYear();
         var month = now.getMonth();
         var date = now.getDate();
 
-
-
         var data = [];
-
-        // $.get("/api/userlog/" + userId, function(res) {
-
-        //     var parseData = JSON.parse(JSON.stringify(res));
-        //     console.log("Parse Data: " + parseData);
-        //     console.log("Parse Data date: " + JSON.stringify(parseData[0].date));
-        //     var newDate = JSON.stringify(parseData[0].date)
-        //     console.log("New Date: " + newDate);
-        //     for (var i = 0; i < parseData.length; i++) {
-        //         console.log("For loop executing " + i + " times.");
-        //         data.push({
-        //             date: newDate,
-        //             value: "testing"
-        //         });
-        //     }
-        //     console.log("Data array: " + JSON.stringify(data));
-        // });
-
 
         // inline
         var datePicked;
@@ -323,11 +302,7 @@
                 monthArray: monthArray,
                 date: new Date(year, month, date),
                 onSelected: function (view, date, data) {
-                    console.log('view:' + view)
-                    console.log('date:' + date)
-                    console.log('data:' + (data || '无'));
                     datePicked = date;
-                    console.log("Here is the date picked: " + datePicked);
                     localStorage.setItem("datePicked", datePicked);
                     $("#addBtn").show();
                     $("#drink").empty();
@@ -336,8 +311,6 @@
                     fillCard();
                 },
                 viewChange: function (view, y, m) {
-                    console.log(view, y, m)
-
                 }
             });
         }
@@ -348,13 +321,9 @@
             zIndex: 999,
             data: data,
             onSelected: function (view, date, data) {
-                console.log('event: onSelected')
             },
             onClose: function (view, date, data) {
-                console.log('event: onClose')
-                console.log('view:' + view)
-                console.log('date:' + date)
-                console.log('data:' + (data || '无'));
+ 
             }
         });
 
@@ -364,11 +333,6 @@
 
         $("#save-data").on("click", function (event) {
             event.preventDefault();
-
-            console.log("Modal button working...");
-            console.log("datePicked: " + datePicked);
-            console.log("Before: " + JSON.stringify(data));
-            console.log("After:" + JSON.stringify(data));
 
             loadCalendar();
 
@@ -399,8 +363,6 @@
             event.preventDefault();
 
             alcohol = $(this).val();
-
-            console.log("this value: " + alcohol);
         });
 
         $(document).ready(function () {

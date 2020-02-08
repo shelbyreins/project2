@@ -1,6 +1,5 @@
 function fillCard() {
     var userId = JSON.parse(localStorage.getItem("currentUser")).id;
-    console.log("User id: " + userId);
     var date = localStorage.getItem("datePicked");
     var dateFormatted = new Date(date).format("yyyy-mm-dd");
 
@@ -12,10 +11,8 @@ function fillCard() {
         dateFormatted[2] = "0" + dateFormatted[2];
     }
     dateFormatted = new String(dateFormatted.join("-"));
-    console.log("Formatted Date: " + dateFormatted);
 
     $.get("/api/alcoholuser/" + userId + "/" + dateFormatted, function(data) {
-        console.log("cardData: " + JSON.stringify(data));
         var cardData = JSON.parse(JSON.stringify(data));
 
         $("#drink").text(cardData[0].alcoholType);

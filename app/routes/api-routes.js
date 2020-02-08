@@ -33,8 +33,6 @@ router.post("/api/alcoholuser/", function (req, res) {
   db.Alcoholuser.create(req.body).then(data => res.send(data))
 });
 
-//Querying to populate aclohol count on to card
-router.get("/api/alcoholuser/:id")
 
 //Querying Alcohol table
 router.post("/api/alcohol/", function (req, res) {
@@ -46,6 +44,7 @@ router.post("/api/alcohol/", function (req, res) {
   }).then(data => res.send(data)
   );
 })
+
 router.get("/api/alcoholuser/:id/:date", function (req, res) {
   console.log("Querying for card display.....");
   console.log("req.params.date" + req.params.date);
@@ -61,14 +60,5 @@ router.get("/api/alcoholuser/:id/:date", function (req, res) {
 
 
 });
-
-// router.get("/api/userlog/:id", function(req, res) {
-
-//   db.Alcoholuser.findAll({
-//     where: {
-//       UserId: req.params.id
-//     }
-//   }).then(data=>res.send(data));
-// });
 
 module.exports = router;
