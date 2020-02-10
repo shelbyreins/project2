@@ -10,11 +10,10 @@ require('dotenv').config();
   },
   "test": {
     "username": "root",
-    "password": "password",
-    "database": "user_db",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": "3306"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

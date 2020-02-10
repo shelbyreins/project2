@@ -1,11 +1,10 @@
 {
-  "name": "buzzbuddy",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -19,14 +18,5 @@
     "mysql2": "^2.1.0",
     "path": "^0.12.7",
     "sequelize": "^5.21.4"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shelbyreins/buzzBuddy.git"
-  },
-  "bugs": {
-    "url": "https://github.com/shelbyreins/buzzBuddy/issues"
-  },
-  "homepage": "https://github.com/shelbyreins/buzzBuddy#readme"
+  }
 }
