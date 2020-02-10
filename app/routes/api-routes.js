@@ -12,6 +12,8 @@ router.post("/api/signup", function (req, res) {
 
 });
 
+router.get("/api/alcoholuser/:id")
+
 
 router.post("/api/signin", function (req, res) {
   db.User.findOne({
